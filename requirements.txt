@@ -1,0 +1,14 @@
+python-dotenv>=1.0.0
+pyyaml>=6.0
+pyttsx3
+speechrecognition 
+keyboard
+PyAudio
+PyYAML
+httpx
+vosk
+sounddevice
+langchain
+langchain-community
+langchain-core
+langchain-ollama

@@ -1,0 +1,12 @@
+{"ts": "2025-09-01T18:10:21.329399Z", "role": "user", "text": "hello"}
+{"ts": "2025-09-01T18:12:24.728368Z", "role": "nia", "text": "Hello, how may I assist you today? Please let me know what your inquiry is about. You can provide a specific topic or issue that you're looking for information on, and I will do my best to help. If you need any technical assistance or have any general queries, please let me know, and I will provide the necessary guidance. Thank you for reaching out, and I look forward to assisting you!"}
+{"ts": "2025-09-01T18:12:45.880085Z", "role": "user", "text": "tell me about ai"}
+{"ts": "2025-09-01T18:14:57.782357Z", "role": "nia", "text": "[ERROR] Ollama model timed out after 60s"}
+{"ts": "2025-09-01T18:20:15.744993Z", "role": "user", "text": "tell me about ai"}
+{"ts": "2025-09-01T18:22:15.802744Z", "role": "nia", "text": "[ERROR] Ollama model timed out after 60s"}
+{"ts": "2025-09-01T18:29:06.312362Z", "role": "user", "text": "stop"}
+{"ts": "2025-09-01T18:31:06.360878Z", "role": "nia", "text": "[ERROR] Ollama model timed out after 60s"}
+{"ts": "2025-09-02T12:34:03.791883Z", "role": "user", "text": "hello"}
+{"ts": "2025-09-02T12:34:06.538496Z", "role": "nia", "text": "[ERROR] Ollama returned non-zero exit. See logs for details."}
+{"ts": "2025-09-02T12:35:33.805916Z", "role": "user", "text": "hello"}
+{"ts": "2025-09-02T12:35:36.359725Z", "role": "nia", "text": "[ERROR] Ollama returned non-zero exit. See logs for details."}

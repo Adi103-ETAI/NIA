@@ -1,0 +1,39 @@
+# NIA Configuration for Phase 1.1
+
+# Voice Interface Settings
+voice:
+  hotkey: "space"
+  tts_engine: "pyttsx3"
+  tts_rate: 165
+  # Set to a specific voice ID from your system, or null to use the default
+  tts_voice_id: null
+  # Phrase chunking settings for streaming TTS
+  chunk_chars_min: 60
+  chunk_chars_max: 240
+  # Regex to identify sentence boundaries for cleaner chunking
+  sentence_boundary_regex: "[.!?…]+\\s"
+
+# Speech-to-Text and Voice Activity Detection
+stt:
+  engine: "vosk"           # 'google' (online) or 'vosk' (offline, requires model)
+  vosk_model_path: "model/vosk-model-small-en-us-0.15"
+  # Voice Activity Detection (VAD) settings for barge-in
+  vad: true
+  vad_engine: "silero"     # 'silero' or 'none'
+  vad_aggressiveness: 2    # Reserved for engines that use aggressiveness
+  vad_trigger_ms: 250      # Milliseconds of speech to start listening (hysteresis)
+  vad_release_ms: 300      # Milliseconds of silence to stop listening (end-of-speech)
+  deepfilternet: true
+  deepfilternet_model_dir: "deepfilternet2"  # Path to DFN model directory
+
+# Brain (LLM) settings
+brain:
+  model: "qwen3:4b"        # Default Ollama model to use
+  fallback_models:
+    - "phi4-mini:3.8b"
+    - "zephyr:7b"
+  system_prompt: "You are NIA, a helpful and friendly voice assistant. Keep your responses concise and conversational. Speak naturally as if you're having a real conversation. Be warm, engaging, and helpful."
+  transport: "http"        # 'http' (streaming) or 'cli' (not implemented)
+  stream: true
+  timeout_s: 120
+  cancel_on_barge_in: true

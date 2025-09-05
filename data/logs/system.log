@@ -1,0 +1,1180 @@
+2025-09-01 18:07:58,755 INFO [nia] Starting NIA (Phase 0). Model=mistral timeout=30s
+2025-09-01 18:07:59,343 WARNING [nia.brain] Ollama CLI returned non-zero from 'ollama version': Error: unknown command "version" for "ollama"
+2025-09-01 18:07:59,344 INFO [nia.console] Console interface started.
+2025-09-01 18:08:02,329 INFO [nia.console] USER: hi
+2025-09-01 18:08:02,329 ERROR [nia.brain] Attempted to call Ollama but CLI is unavailable.
+2025-09-01 18:08:02,329 INFO [nia.console] NIA_RESPONSE: [ERROR] Ollama CLI not available. Install Ollama and ensure it's in PATH.
+2025-09-01 18:09:04,878 INFO [nia.console] Console loop interrupted by user (KeyboardInterrupt).
+2025-09-01 18:09:04,881 INFO [nia] NIA shut down cleanly.
+2025-09-01 22:28:26,506 INFO [nia] Starting NIA (Phase 0). Model=zephyr:7b timeout=30s
+2025-09-01 22:28:26,655 WARNING [nia.brain] Ollama CLI returned non-zero from 'ollama version': Error: unknown command "version" for "ollama"
+2025-09-01 22:28:26,657 INFO [nia.console] Console interface started.
+2025-09-01 22:28:30,231 INFO [nia.console] USER: hi
+2025-09-01 22:28:30,233 ERROR [nia.brain] Attempted to call Ollama but CLI is unavailable.
+2025-09-01 22:28:30,233 INFO [nia.console] NIA_RESPONSE: [ERROR] Ollama CLI not available. Install Ollama and ensure it's in PATH.
+2025-09-01 22:31:15,745 INFO [nia.console] Console loop interrupted by user (KeyboardInterrupt).
+2025-09-01 22:31:15,747 INFO [nia] NIA shut down cleanly.
+2025-09-01 22:34:11,720 INFO [nia] Starting NIA (Phase 0). Model=zephyr:7b timeout=30s
+2025-09-01 22:34:12,962 WARNING [nia.brain] Ollama CLI returned non-zero from 'ollama version': Error: unknown command "version" for "ollama"
+2025-09-01 22:34:12,978 INFO [nia.console] Console interface started.
+2025-09-01 22:34:17,126 INFO [nia.console] USER: hello
+2025-09-01 22:34:17,187 ERROR [nia.brain] Attempted to call Ollama but CLI is unavailable.
+2025-09-01 22:34:17,207 INFO [nia.console] NIA_RESPONSE: [ERROR] Ollama CLI not available. Install Ollama and ensure it's in PATH.
+2025-09-01 22:35:12,415 INFO [nia.console] Console loop interrupted by user (KeyboardInterrupt).
+2025-09-01 22:35:12,417 INFO [nia] NIA shut down cleanly.
+2025-09-01 23:22:51 INFO [nia] Starting NIA Phase 0 (Core online text loop).
+2025-09-01 23:22:51 DEBUG [nia.core.brain] ollama list stderr: Error: unknown flag: --json
+2025-09-01 23:22:51 DEBUG [nia.core.brain] Brain initialized; ollama_path=C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE model=zephyr:7b timeout=30 retries=1
+2025-09-01 23:22:51 INFO [nia] Brain health: {'ollama_found': True, 'message': 'Ollama found at C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'model_configured': 'zephyr:7b', 'available_models': ['NAME', 'mistral:latest', 'llama3:latest', 'qwen2.5-coder:latest', 'cogito:8b', 'zephyr:7b', 'openchat:latest']}
+2025-09-01 23:22:51 INFO [nia.console] Console interface started.
+2025-09-01 23:22:55 INFO [nia.console] USER: hi
+2025-09-01 23:22:55 DEBUG [nia.core.brain] Prepared Ollama command: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b hi
+2025-09-01 23:23:27 WARNING [nia.core.brain] Ollama call timed out (timeout=30) on attempt 1
+2025-09-01 23:23:57 WARNING [nia.core.brain] Ollama call timed out (timeout=30) on attempt 2
+2025-09-01 23:23:57 INFO [nia.core.output] NIA_RESPONSE: [ERROR] Ollama model timed out after 30s
+2025-09-01 23:40:17 INFO [nia] Starting NIA Phase 0
+2025-09-01 23:40:17 DEBUG [nia.core.brain] Brain init: ollama_path=C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE model=zephyr:7b timeout=60 retries=1
+2025-09-01 23:40:18 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'zephyr:7b', 'available_models': ['NAME', 'mistral:latest', 'llama3:latest', 'qwen2.5-coder:latest', 'cogito:8b', 'zephyr:7b', 'openchat:latest']}
+2025-09-01 23:40:18 INFO [nia.console] Console interface started.
+2025-09-01 23:40:21 INFO [nia.console] USER: hello
+2025-09-01 23:40:21 DEBUG [nia.core.brain] Ollama cmd prepared: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b hello
+2025-09-01 23:41:34 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 1
+2025-09-01 23:42:24 DEBUG [nia.core.brain] Ollama returned (len=388)
+2025-09-01 23:42:24 INFO [nia.core.output] NIA_RESPONSE: Hello, how may I assist you today? Please let me know what your inquiry is about. You can provide a specific topic or issue that you're looking for information on, and I will do my best to help. If you need any technical assistance or have any general queries, please let me know, and I will provide the necessary guidance. Thank you for reaching out, and I look forward to assisting you!
+2025-09-01 23:42:45 INFO [nia.console] USER: tell me about ai
+2025-09-01 23:42:47 DEBUG [nia.core.brain] Ollama cmd prepared: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b tell me about ai
+2025-09-01 23:43:52 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 1
+2025-09-01 23:44:57 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 2
+2025-09-01 23:44:57 INFO [nia.core.output] NIA_RESPONSE: [ERROR] Ollama model timed out after 60s
+2025-09-01 23:50:15 INFO [nia.console] USER: tell me about ai
+2025-09-01 23:50:15 DEBUG [nia.core.brain] Ollama cmd prepared: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b tell me about ai
+2025-09-01 23:51:15 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 1
+2025-09-01 23:52:15 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 2
+2025-09-01 23:52:15 INFO [nia.core.output] NIA_RESPONSE: [ERROR] Ollama model timed out after 60s
+2025-09-01 23:59:06 INFO [nia.console] USER: stop
+2025-09-01 23:59:06 DEBUG [nia.core.brain] Ollama cmd prepared: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b stop
+2025-09-02 00:00:06 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 1
+2025-09-02 00:01:06 WARNING [nia.core.brain] Ollama call timed out (timeout=60) on attempt 2
+2025-09-02 00:01:06 INFO [nia.core.output] NIA_RESPONSE: [ERROR] Ollama model timed out after 60s
+2025-09-02 00:04:04 INFO [nia.console] Input ended. Exiting.
+2025-09-02 00:04:04 INFO [nia] NIA stopped.
+2025-09-02 18:03:50 INFO [nia] Starting NIA Phase 0
+2025-09-02 18:03:50 DEBUG [nia.core.brain] Brain init: ollama_path=C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE model=zephyr:7b timeout=60 retries=1
+2025-09-02 18:03:58 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'zephyr:7b', 'available_models': ['NAME', 'mistral:latest', 'llama3:latest', 'qwen2.5-coder:latest', 'cogito:8b', 'zephyr:7b', 'openchat:latest']}
+2025-09-02 18:03:58 INFO [nia.console] Console interface started.
+2025-09-02 18:04:03 INFO [nia.console] USER: hello
+2025-09-02 18:04:04 DEBUG [nia.core.brain] Ollama cmd prepared: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b hello
+2025-09-02 18:04:05 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (1.6 GiB)
+2025-09-02 18:04:05 INFO [nia.core.brain] Retrying Ollama call (attempt 1/1)
+2025-09-02 18:04:06 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (1.6 GiB)
+2025-09-02 18:04:06 INFO [nia.core.output] NIA_RESPONSE: [ERROR] Ollama returned non-zero exit. See logs for details.
+2025-09-02 18:05:33 INFO [nia.console] USER: hello
+2025-09-02 18:05:33 DEBUG [nia.core.brain] Ollama cmd prepared: C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE run zephyr:7b hello
+2025-09-02 18:05:35 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (2.5 GiB)
+2025-09-02 18:05:35 INFO [nia.core.brain] Retrying Ollama call (attempt 1/1)
+2025-09-02 18:05:36 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (2.5 GiB)
+2025-09-02 18:05:36 INFO [nia.core.output] NIA_RESPONSE: [ERROR] Ollama returned non-zero exit. See logs for details.
+2025-09-02 18:06:16 INFO [nia.console] Input ended. Exiting.
+2025-09-02 18:06:16 INFO [nia] NIA stopped.
+2025-09-02 18:38:47 INFO [nia] Starting NIA
+2025-09-02 18:38:57 DEBUG [nia.core.brain] Brain init: ollama_path=C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE model=zephyr:7b timeout=120
+2025-09-02 18:38:58 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'zephyr:7b', 'available_models': ['mistral:latest', 'llama3:latest', 'qwen2.5-coder:latest', 'cogito:8b', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 18:39:08 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 18:39:08 INFO [nia] Using voice interface.
+2025-09-02 18:39:08 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 18:39:19 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:39:28 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:39:35 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:39:41 INFO [nia.interface.voice] USER (voice): hello hello hello hello hello hello hello hello hello hello
+2025-09-02 18:39:41 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 18:40:36 INFO [nia.interface.voice] Barge-in detected. Interrupting current response.
+2025-09-02 18:40:36 INFO [nia.core.tts_manager] TTS stop requested (barge-in).
+2025-09-02 18:40:36 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:40:37 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-02 18:40:37 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 18:40:46 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:41:02 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:41:08 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:41:28 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:41:29 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:41:31 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:41:31 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:41:47 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:41:50 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:42:01 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:42:02 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:42:07 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:42:09 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:42:32 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:42:39 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:42:41 INFO [nia] NIA stopped.
+2025-09-02 18:42:41 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 18:42:41 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-02 18:42:47 INFO [nia] NIA shutdown requested by user.
+2025-09-02 18:47:50 INFO [nia] Starting NIA
+2025-09-02 18:47:51 DEBUG [nia.core.brain] Brain init: ollama_path=C:\Users\rajbh\AppData\Local\Programs\Ollama\ollama.EXE model=zephyr:7b timeout=120
+2025-09-02 18:47:51 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'zephyr:7b', 'available_models': ['mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 18:47:51 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 18:47:51 INFO [nia] Using voice interface.
+2025-09-02 18:47:51 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 18:47:59 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:48:03 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:48:10 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:48:14 INFO [nia.interface.voice] USER (voice): hello hello hello
+2025-09-02 18:48:14 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 18:50:14 ERROR [nia.core.brain] HTTP request to Ollama failed: 
+2025-09-02 18:50:14 INFO [nia.interface.voice] NIA (voice): 
+2025-09-02 18:50:14 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 18:50:37 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 18:50:44 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-02 18:52:48 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 18:52:48 INFO [nia] NIA stopped.
+2025-09-02 18:52:48 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 18:52:48 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-02 18:52:57 INFO [nia] NIA shutdown requested by user.
+2025-09-02 19:20:08 INFO [nia] Starting NIA
+2025-09-02 19:20:21 INFO [nia] Starting NIA
+2025-09-02 19:23:09 INFO [nia] Starting NIA
+2025-09-02 19:23:12 DEBUG [nia.core.brain] Brain init: models_to_try=['zephyr:7b', 'phi3:mini', 'qwen2.5-coder:latest'], timeout=120
+2025-09-02 19:23:12 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'zephyr:7b', 'available_models': ['phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 19:23:19 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 19:23:19 INFO [nia] Using voice interface.
+2025-09-02 19:23:19 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 19:23:25 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 19:24:11 WARNING [nia.interface.voice] Hotkey pressed in an unexpected state: VoiceState.LISTENING
+2025-09-02 19:24:18 WARNING [nia.interface.voice] Hotkey pressed in an unexpected state: VoiceState.LISTENING
+2025-09-02 19:25:37 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 19:25:37 INFO [nia] NIA stopped.
+2025-09-02 19:25:37 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 19:25:37 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-02 19:25:40 INFO [nia] NIA shutdown requested by user.
+2025-09-02 19:59:52 INFO [nia] Starting NIA
+2025-09-02 19:59:57 DEBUG [nia.core.brain] Brain init: models_to_try=['zephyr:7b', 'phi3:mini', 'qwen2.5-coder:latest'], timeout=120
+2025-09-02 19:59:58 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'zephyr:7b', 'available_models': ['qwen3:4b', 'phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 19:59:58 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 20:00:00 INFO [nia] Using voice interface.
+2025-09-02 20:00:00 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 20:02:17 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 20:02:17 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-02 20:02:26 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-02 20:02:26 INFO [nia.interface.voice] USER (voice): hello hello hello hello hello hello hello and
+2025-09-02 20:02:26 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 20:02:26 INFO [nia.core.brain] Attempting generation with model: 'zephyr:7b'
+2025-09-02 20:04:27 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-02 20:04:56 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our team is dedicated to providing you with the best possible experience, whether you're looking for information or seeking out a product or service.'
+2025-09-02 20:04:56 DEBUG [nia.core.tts_manager] Queued for TTS: 'Please feel free to browse through our site and discover all that we have to offer.'
+2025-09-02 20:05:03 DEBUG [nia.core.tts_manager] Queued for TTS: 'If you have any questions or need assistance in any way, please don't hesitate to reach out to us.'
+2025-09-02 20:05:14 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you for considering us as your go-to resource, and we hope you have a fantastic day!'
+2025-09-02 20:05:39 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our website is full of exciting content, so we invite you to explore further and immerse yourself in all that we have to offer.'
+2025-09-02 20:05:51 DEBUG [nia.core.tts_manager] Queued for TTS: 'From interactive tools and resources to engaging articles and videos, we are committed to providing you with a wealth of valuable information.'
+2025-09-02 20:06:01 DEBUG [nia.core.tts_manager] Queued for TTS: 'Keep coming back for more, as we update our site regularly with fresh insights and new features.'
+2025-09-02 20:06:10 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you once again for choosing us, and we look forward to your continued engagement!'
+2025-09-02 20:06:26 DEBUG [nia.core.tts_manager] Queued for TTS: 'Hello hello hello hello hello hello hello and
+
+We are delighted that you have found your way back to our website.'
+2025-09-02 20:06:39 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our team is constantly working to enhance the user experience, so we encourage you to explore all of our latest updates and improvements.'
+2025-09-02 20:06:54 DEBUG [nia.core.tts_manager] Queued for TTS: 'From improved functionality to enhanced visual design, we strive to provide you with a seamless and satisfying experience every time you visit us.'
+2025-09-02 20:07:08 DEBUG [nia.core.tts_manager] Queued for TTS: 'Please feel free to reach out to us at any time if you have any questions or suggestions for how we can better serve you.'
+2025-09-02 20:07:19 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you again for your continued support, and we hope you enjoy all that our site has to offer!'
+2025-09-02 20:07:40 DEBUG [nia.core.tts_manager] Queued for TTS: 'Hello hello hello hello hello hello hello and
+
+We are thrilled to have the opportunity to welcome you back to our website once again.'
+2025-09-02 20:08:01 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our team is committed to providing you with a superior experience every time you visit us, and we are constantly working to enhance our site's functionality, design, and content.'
+2025-09-02 20:08:13 DEBUG [nia.core.tts_manager] Queued for TTS: 'Whether you're looking for information or seeking out a product or service, we are confident that you will find everything you need here.'
+2025-09-02 20:08:26 DEBUG [nia.core.tts_manager] Queued for TTS: 'Please don't hesitate to reach out to us if you have any questions or suggestions for how we can better serve you.'
+2025-09-02 20:08:35 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you for your continued support, and we look forward to seeing you again soon!'
+2025-09-02 20:08:49 DEBUG [nia.core.tts_manager] Queued for TTS: 'Hello hello hello hello hello hello hello and
+
+Welcome back to our website!'
+2025-09-02 20:08:58 DEBUG [nia.core.tts_manager] Queued for TTS: 'We are excited to provide you with a superior user experience every time you visit us.'
+2025-09-02 20:09:12 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our team is committed to enhancing our site's functionality, design, and content to meet your evolving needs.'
+2025-09-02 20:09:27 DEBUG [nia.core.tts_manager] Queued for TTS: 'Whether you're looking for information or seeking out a product or service, we are confident that you will find everything you need here.'
+2025-09-02 20:09:42 DEBUG [nia.core.tts_manager] Queued for TTS: 'Please don't hesitate to reach out to us if you have any questions or suggestions for how we can better serve you.'
+2025-09-02 20:09:53 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you for your continued support, and we look forward to seeing you again soon!'
+2025-09-02 20:10:20 DEBUG [nia.core.tts_manager] Queued for TTS: 'Hello hello hello hello hello hello hello and
+
+Greetings once again!'
+2025-09-02 20:10:21 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our website is designed to provide you with a seamless and satisfying experience every time you visit us.'
+2025-09-02 20:10:38 DEBUG [nia.core.tts_manager] Queued for TTS: 'Whether you're looking for information or seeking out a product or service, our team is committed to delivering the best possible results.'
+2025-09-02 20:10:49 DEBUG [nia.core.tts_manager] Queued for TTS: 'We invite you to explore all that our site has to offer, from interactive tools and resources to engaging articles and videos.'
+2025-09-02 20:11:05 DEBUG [nia.core.tts_manager] Queued for TTS: 'If you have any questions or suggestions for how we can better serve you, please don't hesitate to reach out to us.'
+2025-09-02 20:11:17 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you again for your continued support, and we hope you enjoy all that our site has to offer!'
+2025-09-02 20:11:38 DEBUG [nia.core.tts_manager] Queued for TTS: 'Hello hello hello hello hello hello hello and
+
+We are delighted to have the opportunity to welcome you back to our website once again.'
+2025-09-02 20:12:02 DEBUG [nia.core.tts_manager] Queued for TTS: 'Our team is committed to delivering a superior user experience every time you visit us, and we strive to enhance our site's functionality, design, and content to meet your evolving needs.'
+2025-09-02 20:12:18 DEBUG [nia.core.tts_manager] Queued for TTS: 'Whether you're looking for information or seeking out a product or service, we are confident that you will find everything you need here.'
+2025-09-02 20:12:35 DEBUG [nia.core.tts_manager] Queued for TTS: 'Please don't hesitate to reach out to us if you have any questions or suggestions for how we can better serve you.'
+2025-09-02 20:12:42 INFO [nia.interface.voice] Barge-in detected. Interrupting current response.
+2025-09-02 20:12:42 INFO [nia.core.tts_manager] TTS stop requested (barge-in).
+2025-09-02 20:12:47 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-02 20:12:47 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 20:12:52 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 20:12:52 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-02 20:12:55 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 20:12:55 INFO [nia] NIA stopped.
+2025-09-02 20:12:55 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 20:12:57 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-02 20:13:09 INFO [nia] NIA shutdown requested by user.
+2025-09-02 20:28:08 INFO [nia] Starting NIA
+2025-09-02 20:28:14 DEBUG [nia.core.brain] Brain init: models_to_try=['phi3:mini', 'zephyr:7b', 'qwen2.5-coder:latest'], timeout=120
+2025-09-02 20:28:14 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'phi3:mini', 'available_models': ['qwen3:4b', 'phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 20:28:16 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 20:28:19 INFO [nia] Using voice interface.
+2025-09-02 20:28:19 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 20:28:24 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 20:28:24 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-02 20:28:31 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-02 20:28:31 INFO [nia.interface.voice] USER (voice): hello hello hello hello hello hello
+2025-09-02 20:28:31 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 20:28:31 INFO [nia.core.brain] Attempting generation with model: 'phi3:mini'
+2025-09-02 20:28:31 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-02 20:28:31 INFO [nia.core.brain] Attempting generation with model: 'zephyr:7b'
+2025-09-02 20:30:36 WARNING [nia.core.brain] Model 'zephyr:7b' failed with a network error (e.g., timeout): 
+2025-09-02 20:30:41 INFO [nia.core.brain] Attempting generation with model: 'qwen2.5-coder:latest'
+2025-09-02 20:32:04 INFO [nia.interface.voice] Barge-in detected. Interrupting current response.
+2025-09-02 20:32:04 INFO [nia.core.tts_manager] TTS stop requested (barge-in).
+2025-09-02 20:32:04 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-02 20:32:04 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 20:32:06 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 20:32:06 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-02 20:32:23 WARNING [nia.interface.voice] Hotkey pressed in an unexpected state: VoiceState.LISTENING
+2025-09-02 20:32:25 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-02 20:32:25 INFO [nia.interface.voice] USER (voice): hello look
+2025-09-02 20:32:25 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 20:32:25 INFO [nia.core.brain] Attempting generation with model: 'phi3:mini'
+2025-09-02 20:32:25 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-02 20:32:25 INFO [nia.core.brain] Attempting generation with model: 'zephyr:7b'
+2025-09-02 20:33:28 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-02 20:33:45 DEBUG [nia.core.tts_manager] Queued for TTS: 'I'm sorry but I do not have the ability to greet you in person or respond to your message using a human-like tone.'
+2025-09-02 20:33:50 DEBUG [nia.core.tts_manager] Queued for TTS: 'However, I can certainly help you with any questions you may have!'
+2025-09-02 20:33:59 DEBUG [nia.core.tts_manager] Queued for TTS: 'If you need assistance with anything, please let me know how I can be of service.'
+2025-09-02 20:34:08 DEBUG [nia.core.tts_manager] Queued for TTS: 'Thank you for considering our chatbot services and I look forward to working with you soon!'
+2025-09-02 20:34:08 INFO [nia.interface.voice] NIA (voice): I'm sorry but I do not have the ability to greet you in person or respond to your message using a human-like tone. However, I can certainly help you with any questions you may have! If you need assistance with anything, please let me know how I can be of service. Thank you for considering our chatbot services and I look forward to working with you soon!
+2025-09-02 20:34:08 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 20:34:41 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 20:34:41 INFO [nia] NIA is shutting down...
+2025-09-02 20:34:41 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 20:34:41 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 20:34:43 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-02 20:34:43 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-02 20:34:43 INFO [nia] NIA shutdown complete.
+2025-09-02 20:35:19 INFO [nia] NIA shutdown requested by user.
+2025-09-02 20:51:49 INFO [nia] Starting NIA
+2025-09-02 20:51:54 DEBUG [nia.core.brain] Brain init: models_to_try=['qwen3:4b', 'phi3:mini', 'zephyr:7b'], timeout=120
+2025-09-02 20:51:54 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'qwen3:4b', 'available_models': ['qwen3:4b', 'phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 20:51:55 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 20:51:58 INFO [nia] Using voice interface.
+2025-09-02 20:51:58 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 21:46:38 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 21:46:38 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-02 21:46:46 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-02 21:46:46 INFO [nia.interface.voice] USER (voice): hello how are you
+2025-09-02 21:46:46 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 21:46:46 INFO [nia.core.brain] Attempting generation with model: 'qwen3:4b'
+2025-09-02 21:48:48 WARNING [nia.core.brain] Model 'qwen3:4b' failed with a network error (e.g., timeout): 
+2025-09-02 21:48:48 INFO [nia.core.brain] Attempting generation with model: 'phi3:mini'
+2025-09-02 21:48:52 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-02 21:48:52 INFO [nia.core.brain] Attempting generation with model: 'zephyr:7b'
+2025-09-02 21:50:24 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-02 21:50:37 DEBUG [nia.core.tts_manager] Queued for TTS: 'I am not capable of having feelings like humans do, but I'm programmed to respond politely.'
+2025-09-02 21:50:49 DEBUG [nia.core.tts_manager] Queued for TTS: 'please feel free to ask any questions or provide instructions.'
+2025-09-02 21:50:55 DEBUG [nia.core.tts_manager] Queued for TTS: 'I'm here to assist you in any way possible.'
+2025-09-02 21:50:55 INFO [nia.interface.voice] NIA (voice): I am not capable of having feelings like humans do, but I'm programmed to respond politely. So, I'd say I'm doing well, thanks for asking! How about you? please feel free to ask any questions or provide instructions. I'm here to assist you in any way possible.
+2025-09-02 21:50:55 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 21:58:39 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 21:58:39 INFO [nia] NIA is shutting down...
+2025-09-02 21:58:39 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 21:58:39 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 21:58:41 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-02 21:58:41 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-02 21:58:41 INFO [nia] NIA shutdown complete.
+2025-09-02 22:07:04 INFO [nia] NIA shutdown requested by user.
+2025-09-02 22:45:49 INFO [nia] Starting NIA
+2025-09-02 22:45:55 DEBUG [nia.core.brain] Brain init: models_to_try=['qwen3:4b', 'phi3:mini', 'zephyr:7b'], timeout=120
+2025-09-02 22:45:56 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'qwen3:4b', 'available_models': ['qwen3:4b', 'phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-02 22:45:59 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-02 22:46:02 INFO [nia] Using voice interface.
+2025-09-02 22:46:02 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-02 22:46:15 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-02 22:46:15 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-02 22:46:22 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-02 22:46:22 INFO [nia.interface.voice] USER (voice): hello how are you
+2025-09-02 22:46:22 INFO [nia.interface.voice] State changed to THINKING
+2025-09-02 22:46:22 INFO [nia.core.brain] Attempting generation with model: 'qwen3:4b'
+2025-09-02 22:48:17 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-02 22:48:25 DEBUG [nia.core.tts_manager] Queued for TTS: 'That's a friendly and common starting point for conversations.'
+2025-09-02 22:48:25 DEBUG [nia.core.tts_manager] Queued for TTS: 'I should respond in a warm, approachable way since they're being polite.'
+2025-09-02 22:48:40 DEBUG [nia.core.tts_manager] Queued for TTS: 'They might be testing if I'm working or just starting a conversation.'
+2025-09-02 22:48:55 DEBUG [nia.core.tts_manager] Queued for TTS: 'Just a friendly reply with an open invitation for questions or help.'
+2025-09-02 22:49:09 DEBUG [nia.core.tts_manager] Queued for TTS: 'How can I help you today?" 
+
+But wait, the user said "how are you" so I should respond to that part.'
+2025-09-02 22:49:38 DEBUG [nia.core.tts_manager] Queued for TTS: 'How can I help you today?" 
+
+That's concise, friendly, and invites them to ask for help.'
+2025-09-02 22:49:43 DEBUG [nia.core.tts_manager] Queued for TTS: '😊 How can I help you today?'
+2025-09-02 22:53:51 INFO [nia.interface.voice] Barge-in detected. Interrupting current response.
+2025-09-02 22:53:51 INFO [nia.core.tts_manager] TTS stop requested (barge-in).
+2025-09-02 22:53:51 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-02 22:53:51 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-02 22:53:56 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 22:53:56 INFO [nia] NIA is shutting down...
+2025-09-02 22:53:56 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-02 22:53:56 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-02 22:53:58 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-02 22:53:58 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-02 22:53:58 INFO [nia] NIA shutdown complete.
+2025-09-02 23:02:22 INFO [nia] NIA shutdown requested by user.
+2025-09-03 18:04:03 INFO [nia] Starting NIA
+2025-09-03 18:04:13 DEBUG [nia.core.brain] Brain init: models_to_try=['qwen3:4b', 'phi3:mini', 'zephyr:7b'], timeout=120
+2025-09-03 18:04:13 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'qwen3:4b', 'available_models': ['qwen3:4b', 'phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-03 18:04:16 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-03 18:04:21 INFO [nia] Using voice interface.
+2025-09-03 18:04:21 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-03 18:04:25 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 18:04:25 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 18:04:33 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 18:04:33 INFO [nia.interface.voice] USER (voice): hello how are you
+2025-09-03 18:04:33 INFO [nia.interface.voice] State changed to THINKING
+2025-09-03 18:04:33 INFO [nia.core.brain] Attempting generation with model: 'qwen3:4b'
+2025-09-03 18:05:20 INFO [nia.interface.voice] Barge-in detected. Interrupting current response.
+2025-09-03 18:05:20 INFO [nia.core.tts_manager] TTS stop requested (barge-in).
+2025-09-03 18:05:20 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-03 18:05:20 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-03 18:05:29 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 18:05:29 INFO [nia] NIA is shutting down...
+2025-09-03 18:05:29 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 18:05:29 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-03 18:05:29 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-03 18:05:29 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-03 18:05:29 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-03 18:05:29 INFO [nia] NIA shutdown complete.
+2025-09-03 18:05:31 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 18:05:31 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 18:05:31 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-03 18:05:32 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-03 18:05:32 INFO [nia] NIA shutdown requested by user.
+2025-09-03 18:48:47 INFO [nia] Starting NIA
+2025-09-03 18:48:52 DEBUG [nia.core.brain] Brain init: models_to_try=['qwen3:4b', 'phi3:mini', 'zephyr:7b'], timeout=120
+2025-09-03 18:48:53 INFO [nia] Brain health: {'ollama_path': 'C:\\Users\\rajbh\\AppData\\Local\\Programs\\Ollama\\ollama.EXE', 'configured_model': 'qwen3:4b', 'available_models': ['qwen3:4b', 'phi4-mini:3.8b', 'mistral:latest', 'qwen2.5-coder:latest', 'zephyr:7b', 'openchat:latest'], 'streaming_enabled': True}
+2025-09-03 18:48:55 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-03 18:48:57 INFO [nia] Using voice interface.
+2025-09-03 18:48:57 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-03 18:48:58 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 18:48:59 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 18:49:05 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 18:49:05 INFO [nia.interface.voice] USER (voice): hello how are you
+2025-09-03 18:49:05 INFO [nia.interface.voice] State changed to THINKING
+2025-09-03 18:49:05 INFO [nia.core.brain] Attempting generation with model: 'qwen3:4b'
+2025-09-03 18:51:05 WARNING [nia.core.brain] Model 'qwen3:4b' failed with a network error (e.g., timeout): 
+2025-09-03 18:51:05 INFO [nia.core.brain] Attempting generation with model: 'phi3:mini'
+2025-09-03 18:51:07 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-03 18:51:07 INFO [nia.core.brain] Attempting generation with model: 'zephyr:7b'
+2025-09-03 18:53:07 WARNING [nia.core.brain] Model 'zephyr:7b' failed with a network error (e.g., timeout): 
+2025-09-03 18:53:07 ERROR [nia.core.brain] All configured models failed to generate a response.
+2025-09-03 18:53:07 DEBUG [nia.core.tts_manager] Queued for TTS: ''
+2025-09-03 18:53:08 INFO [nia.interface.voice] NIA (voice): 
+2025-09-03 18:53:08 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-03 18:53:32 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 18:53:32 INFO [nia] NIA is shutting down...
+2025-09-03 18:53:32 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 18:53:32 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-03 18:53:32 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-03 18:53:32 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-03 18:53:32 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-03 18:53:32 INFO [nia] NIA shutdown complete.
+2025-09-03 18:53:35 INFO [nia] NIA shutdown requested by user.
+2025-09-03 19:05:34 INFO [nia] Starting NIA
+2025-09-03 19:07:48 INFO [nia] Starting NIA
+2025-09-03 21:02:14 INFO [nia] Starting NIA
+2025-09-03 21:41:07 INFO [nia] Starting NIA
+2025-09-03 21:41:13 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-03 21:41:14 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen2:4b
+2025-09-03 21:41:14 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-03 21:41:14 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen2:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-03 21:41:16 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-03 21:41:18 INFO [nia] Using voice interface.
+2025-09-03 21:41:18 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-03 21:41:20 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 21:41:20 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 21:41:27 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 21:41:27 INFO [nia.interface.voice] USER (voice): i know are you
+2025-09-03 21:41:27 INFO [nia.interface.voice] State changed to THINKING
+2025-09-03 21:41:27 INFO [nia.core.brain] Generating streaming response for prompt: 'i know are you'
+2025-09-03 21:41:29 ERROR [nia.core.brain] An error occurred while streaming LLM response.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 63, in generate_stream
+    async for chunk in self.llm.astream(messages):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_core\language_models\chat_models.py", line 613, in astream
+    async for chunk in self._astream(
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_ollama\chat_models.py", line 981, in _astream
+    async for chunk in self._aiterate_over_stream(messages, stop, **kwargs):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_ollama\chat_models.py", line 920, in _aiterate_over_stream
+    async for stream_resp in self._acreate_chat_stream(messages, stop, **kwargs):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_ollama\chat_models.py", line 728, in _acreate_chat_stream
+    async for part in await self._async_client.chat(**chat_params):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\ollama\_client.py", line 682, in inner
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: model "qwen2:4b" not found, try pulling it first (status code: 404)
+2025-09-03 21:41:29 DEBUG [nia.core.tts_manager] Queued for TTS: ''
+2025-09-03 21:41:29 INFO [nia.interface.voice] NIA (voice): 
+2025-09-03 21:41:29 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-03 21:41:44 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 21:41:44 INFO [nia] NIA is shutting down...
+2025-09-03 21:41:44 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 21:41:44 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-03 21:41:44 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-03 21:41:44 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-03 21:41:44 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-03 21:41:44 INFO [nia.core.brain] Brain shutting down.
+2025-09-03 21:41:44 INFO [nia] NIA shutdown complete.
+2025-09-03 21:42:05 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 21:42:05 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 21:42:05 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-03 21:42:05 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-03 21:42:05 INFO [nia] NIA shutdown requested by user.
+2025-09-03 22:10:23 INFO [nia] Starting NIA
+2025-09-03 22:10:25 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-03 22:10:26 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-03 22:10:26 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-03 22:10:26 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-03 22:10:27 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-03 22:10:28 INFO [nia] Using voice interface.
+2025-09-03 22:10:28 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-03 22:10:37 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 22:10:37 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 22:10:44 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 22:10:44 INFO [nia.interface.voice] USER (voice): hello how are you
+2025-09-03 22:10:44 INFO [nia.interface.voice] State changed to THINKING
+2025-09-03 22:10:44 INFO [nia.core.brain] Generating streaming response for prompt: 'hello how are you'
+2025-09-03 22:13:16 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: <think>
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: 
+
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: Okay
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  the
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  user
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  just
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  said
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: hello
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  how
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  are
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: "
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  -
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  that
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: 's
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  a
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  classic
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  friendly
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  greeting
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:23 DEBUG [nia.core.tts_manager] Queued for TTS: '<think>
+Okay, the user just said "hello how are you" - that's a classic friendly greeting.'
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  
+
+
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: Hmm
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token:  they
+2025-09-03 22:13:23 DEBUG [nia.core.brain] Streamed token: 're
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  being
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  super
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  casual
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  and
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  warm
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  here
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  Probably
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  just
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  checking
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  in
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  or
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  starting
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  a
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  new
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  conversation
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  should
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  match
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  their
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  energy
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  -
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  no
+2025-09-03 22:13:25 DEBUG [nia.core.brain] Streamed token:  need
+2025-09-03 22:13:26 DEBUG [nia.core.brain] Streamed token:  for
+2025-09-03 22:13:26 DEBUG [nia.core.brain] Streamed token:  over
+2025-09-03 22:13:26 DEBUG [nia.core.brain] Streamed token: -the
+2025-09-03 22:13:26 DEBUG [nia.core.brain] Streamed token: -top
+2025-09-03 22:13:27 DEBUG [nia.core.brain] Streamed token:  form
+2025-09-03 22:13:27 DEBUG [nia.core.brain] Streamed token: ality
+2025-09-03 22:13:27 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:27 DEBUG [nia.core.tts_manager] Queued for TTS: 'I should match their energy - no need for over-the-top formality.'
+2025-09-03 22:13:27 DEBUG [nia.core.brain] Streamed token:  
+
+
+2025-09-03 22:13:28 DEBUG [nia.core.brain] Streamed token: *
+2025-09-03 22:13:28 DEBUG [nia.core.brain] Streamed token: checks
+2025-09-03 22:13:28 DEBUG [nia.core.brain] Streamed token:  guidelines
+2025-09-03 22:13:28 DEBUG [nia.core.brain] Streamed token: *
+2025-09-03 22:13:29 DEBUG [nia.core.brain] Streamed token:  Right
+2025-09-03 22:13:30 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:13:30 DEBUG [nia.core.brain] Streamed token:  gotta
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  be
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  concise
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  but
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  warm
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  No
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  long
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  paragraphs
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  They
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  used
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token: how
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  are
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token: "
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  so
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token: 'll
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  answer
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  that
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  directly
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  first
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  before
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  adding
+2025-09-03 22:13:35 DEBUG [nia.core.brain] Streamed token:  something
+2025-09-03 22:13:36 DEBUG [nia.core.brain] Streamed token:  helpful
+2025-09-03 22:13:36 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:43 DEBUG [nia.core.tts_manager] Queued for TTS: 'They used "how are you" so I'll answer that directly first before adding something helpful.'
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  
+
+
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token: Oh
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token: !
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  Important
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  -
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  since
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  they
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  didn
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token: 't
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  ask
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  a
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  specific
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  question
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  yet
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  should
+2025-09-03 22:13:43 DEBUG [nia.core.brain] Streamed token:  leave
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  the
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  door
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  open
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  for
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  what
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  they
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  need
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:13:58 DEBUG [nia.core.tts_manager] Queued for TTS: 'Important - since they didn't ask a specific question yet, I should leave the door open for what they need.'
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  Maybe
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  add
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  that
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token: anything
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:13:58 DEBUG [nia.core.brain] Streamed token:  can
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  help
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  with
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: ?"
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  touch
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  at
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  the
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  end
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  
+
+
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: *
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: mental
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  note
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: *
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  Don
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: 't
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  say
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: I
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: 'm
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  great
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  -
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  too
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  robotic
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: Doing
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  great
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  sounds
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  more
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  human
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  And
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: just
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  checking
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  in
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  makes
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  it
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  feel
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  natural
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  
+
+
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: Wait
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: ...
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  should
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  add
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  emojis
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  The
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  guidelines
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  say
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: natural
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  speech
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  patterns
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: "
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  -
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  maybe
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  one
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  smile
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token: y
+2025-09-03 22:14:05 DEBUG [nia.core.brain] Streamed token:  to
+2025-09-03 22:14:13 DEBUG [nia.core.brain] Streamed token:  keep
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  it
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  light
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  but
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  not
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  over
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: do
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  it
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:21 DEBUG [nia.core.tts_manager] Queued for TTS: 'The guidelines say "natural speech patterns" - maybe one smiley to keep it light but not overdo it.'
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  Yeah
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  one
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  🌟
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  feels
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  right
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  
+
+
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: *
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: double
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: -check
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ing
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: *
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  Yep
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  this
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  keeps
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  it
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  friendly
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  short
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  and
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  gives
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  them
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  an
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  easy
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  out
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  to
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  ask
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  anything
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:21 DEBUG [nia.core.tts_manager] Queued for TTS: '*double-checking* Yep, this keeps it friendly, short, and gives them an easy out to ask anything.'
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  No
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  j
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: argon
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ,
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  no
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  weird
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  ph
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: rasing
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: .
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  Perfect
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: .
+
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: </think>
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: 
+
+
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: Hello
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: !
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: 'm
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  doing
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  great
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  🌟
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  Just
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  checking
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  in
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: —
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: how
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  about
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  Anything
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  can
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  help
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  with
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-03 22:14:21 DEBUG [nia.core.brain] Streamed token:  😊
+2025-09-03 22:14:22 DEBUG [nia.core.tts_manager] Queued for TTS: '😊'
+2025-09-03 22:14:22 DEBUG [nia.core.tts_manager] Queued for TTS: ''
+2025-09-03 22:17:49 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 22:17:49 INFO [nia] NIA is shutting down...
+2025-09-03 22:17:49 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 22:17:49 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-03 22:17:51 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-03 22:17:51 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-03 22:17:51 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-03 22:17:51 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-03 22:17:51 INFO [nia.core.brain] Brain shutting down.
+2025-09-03 22:17:51 INFO [nia] NIA shutdown complete.
+2025-09-03 22:17:54 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 22:17:54 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 22:17:54 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-03 22:17:55 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-03 22:17:55 INFO [nia] NIA shutdown requested by user.
+2025-09-03 22:33:08 INFO [nia] Starting NIA
+2025-09-03 22:33:21 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-03 22:33:22 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-03 22:33:22 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-03 22:33:22 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-03 22:33:25 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-03 22:33:27 INFO [nia] Using voice interface.
+2025-09-03 22:33:27 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-03 22:33:30 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 22:33:30 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 22:33:39 ERROR [nia.core.stt_manager] STT transcription error: Future.result() takes no keyword arguments
+2025-09-03 22:33:39 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 22:33:39 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-03 22:33:44 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 22:33:44 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 22:33:51 ERROR [nia.core.stt_manager] STT transcription error: Future.result() takes no keyword arguments
+2025-09-03 22:33:51 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 22:33:51 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-03 22:33:55 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 22:33:55 INFO [nia] NIA is shutting down...
+2025-09-03 22:33:55 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-03 22:33:55 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-03 22:33:55 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-03 22:33:55 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-03 22:33:55 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-03 22:33:55 INFO [nia.core.brain] Brain shutting down.
+2025-09-03 22:33:55 INFO [nia] NIA shutdown complete.
+2025-09-03 22:34:09 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-03 22:34:09 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-03 22:34:49 ERROR [nia.core.stt_manager] STT transcription error: Future.result() takes no keyword arguments
+2025-09-03 22:34:49 ERROR [nia.core.stt_manager] STT transcription timed out
+2025-09-03 22:34:49 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-03 22:34:49 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-03 22:34:49 INFO [nia] NIA shutdown requested by user.
+2025-09-04 00:12:01 INFO [nia] Starting NIA
+2025-09-04 00:12:20 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-04 00:12:21 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-04 00:12:21 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-04 00:12:21 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-04 00:12:24 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-04 00:12:27 INFO [nia] Using voice interface.
+2025-09-04 00:12:27 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-04 00:12:29 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-04 00:12:29 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-04 00:12:36 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-04 00:12:36 INFO [nia.interface.voice] USER (voice): hello hello
+2025-09-04 00:12:36 INFO [nia.interface.voice] State changed to THINKING
+2025-09-04 00:12:36 INFO [nia.core.brain] Generating streaming response for prompt: 'hello hello'
+2025-09-04 00:13:38 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-04 00:13:38 DEBUG [nia.core.brain] Streamed token: Hello
+2025-09-04 00:13:39 DEBUG [nia.core.brain] Streamed token:  hello
+2025-09-04 00:13:39 DEBUG [nia.core.brain] Streamed token: !
+2025-09-04 00:13:40 DEBUG [nia.core.brain] Streamed token:  👋
+2025-09-04 00:13:40 DEBUG [nia.core.brain] Streamed token:  How
+2025-09-04 00:13:40 DEBUG [nia.core.brain] Streamed token:  can
+2025-09-04 00:13:40 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-04 00:13:40 DEBUG [nia.core.brain] Streamed token:  help
+2025-09-04 00:13:41 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-04 00:13:41 DEBUG [nia.core.brain] Streamed token:  😊
+2025-09-04 00:13:42 DEBUG [nia.core.tts_manager] Queued for TTS: '😊'
+2025-09-04 00:13:42 DEBUG [nia.core.tts_manager] Queued for TTS: ''
+2025-09-04 00:14:18 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 00:14:18 INFO [nia] NIA is shutting down...
+2025-09-04 00:14:18 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 00:14:18 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-04 00:14:20 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-04 00:14:20 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-04 00:14:21 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-04 00:14:21 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-04 00:14:21 INFO [nia.core.brain] Brain shutting down.
+2025-09-04 00:14:21 INFO [nia] NIA shutdown complete.
+2025-09-04 00:14:21 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-04 00:14:21 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-04 00:14:21 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-04 00:14:21 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-04 00:14:22 INFO [nia] NIA shutdown requested by user.
+2025-09-04 00:19:07 INFO [nia] Starting NIA
+2025-09-04 00:19:11 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-04 00:19:13 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-04 00:19:13 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-04 00:19:13 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-04 00:19:14 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-04 00:19:16 INFO [nia] Using voice interface.
+2025-09-04 00:19:16 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-04 00:19:17 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-04 00:19:17 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-04 00:19:29 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-04 00:19:29 INFO [nia.interface.voice] USER (voice): hello how are you
+2025-09-04 00:19:29 INFO [nia.interface.voice] State changed to THINKING
+2025-09-04 00:19:29 INFO [nia.core.brain] Generating streaming response for prompt: 'hello how are you'
+2025-09-04 00:27:05 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token: Hey
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token: !
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token: 'm
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token:  doing
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token:  great
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token: !
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token:  How
+2025-09-04 00:27:05 DEBUG [nia.core.brain] Streamed token:  can
+2025-09-04 00:27:10 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-04 00:27:10 DEBUG [nia.core.brain] Streamed token:  help
+2025-09-04 00:27:10 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-04 00:27:10 DEBUG [nia.core.brain] Streamed token:  today
+2025-09-04 00:27:10 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-04 00:27:10 DEBUG [nia.core.brain] Streamed token:  😊
+2025-09-04 00:32:17 INFO [nia.interface.voice] NIA (voice): Hey! I'm doing great! How can I help you today? 😊
+2025-09-04 00:32:22 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-04 00:37:17 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 00:37:17 INFO [nia] NIA is shutting down...
+2025-09-04 00:37:17 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 00:37:17 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-04 00:37:17 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-04 00:37:17 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-04 00:37:18 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-04 00:37:18 INFO [nia.core.brain] Brain shutting down.
+2025-09-04 00:37:18 INFO [nia] NIA shutdown complete.
+2025-09-04 00:45:03 INFO [nia] NIA shutdown requested by user.
+2025-09-04 12:02:55 INFO [nia] Starting NIA
+2025-09-04 12:03:07 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-04 12:03:08 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-04 12:03:08 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-04 12:03:08 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-04 12:03:11 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-04 12:03:14 INFO [nia] Using voice interface.
+2025-09-04 12:03:14 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-04 12:03:19 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-04 12:03:19 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-04 12:03:26 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-04 12:03:26 INFO [nia.interface.voice] USER (voice): how are you
+2025-09-04 12:03:26 INFO [nia.interface.voice] State changed to THINKING
+2025-09-04 12:03:26 INFO [nia.core.brain] Generating streaming response for prompt: 'how are you'
+2025-09-04 12:06:36 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token: I
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token: 'm
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  doing
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  great
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token: !
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  😊
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  How
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  can
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  help
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token:  today
+2025-09-04 12:06:36 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-04 12:06:37 DEBUG [nia.core.tts_manager] Queued for TTS: 'How can I help you today?'
+2025-09-04 12:06:37 INFO [nia.interface.voice] NIA (voice): I'm doing great! 😊 How can I help you today?
+2025-09-04 12:06:37 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-04 12:07:05 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 12:07:05 INFO [nia] NIA is shutting down...
+2025-09-04 12:07:05 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 12:07:05 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-04 12:07:07 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-04 12:07:07 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-04 12:07:07 INFO [nia.core.brain] Brain shutting down.
+2025-09-04 12:07:07 INFO [nia] NIA shutdown complete.
+2025-09-04 12:33:52 INFO [nia] NIA shutdown requested by user.
+2025-09-04 19:32:35 INFO [nia] Starting NIA
+2025-09-04 19:32:47 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-04 19:32:49 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-04 19:32:49 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-04 19:32:49 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-04 19:32:52 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-04 19:32:55 INFO [nia] Using voice interface.
+2025-09-04 19:32:55 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-04 19:33:51 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-04 19:33:51 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-04 19:33:58 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-04 19:33:58 INFO [nia.interface.voice] USER (voice): how are you
+2025-09-04 19:33:58 INFO [nia.interface.voice] State changed to THINKING
+2025-09-04 19:33:58 INFO [nia.core.brain] Generating streaming response for prompt: 'how are you'
+2025-09-04 19:37:41 INFO [nia.interface.voice] State changed to SPEAKING
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token: Hey
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  there
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token: !
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  😊
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token: 'm
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  doing
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  great
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  thanks
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  to
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  all
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  the
+2025-09-04 19:37:44 DEBUG [nia.core.brain] Streamed token:  fun
+2025-09-04 19:37:45 DEBUG [nia.core.brain] Streamed token:  chats
+2025-09-04 19:37:45 DEBUG [nia.core.brain] Streamed token:  like
+2025-09-04 19:37:45 DEBUG [nia.core.brain] Streamed token:  this
+2025-09-04 19:37:45 DEBUG [nia.core.brain] Streamed token:  one
+2025-09-04 19:37:46 DEBUG [nia.core.brain] Streamed token: !
+2025-09-04 19:37:46 DEBUG [nia.core.brain] Streamed token:  How
+2025-09-04 19:37:46 DEBUG [nia.core.brain] Streamed token:  about
+2025-09-04 19:37:46 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-04 19:37:47 DEBUG [nia.core.brain] Streamed token: —
+2025-09-04 19:37:47 DEBUG [nia.core.brain] Streamed token: what
+2025-09-04 19:37:47 DEBUG [nia.core.brain] Streamed token: 's
+2025-09-04 19:37:47 DEBUG [nia.core.brain] Streamed token:  on
+2025-09-04 19:37:48 DEBUG [nia.core.brain] Streamed token:  your
+2025-09-04 19:37:48 DEBUG [nia.core.brain] Streamed token:  mind
+2025-09-04 19:37:48 DEBUG [nia.core.brain] Streamed token:  today
+2025-09-04 19:37:48 DEBUG [nia.core.brain] Streamed token: ?
+2025-09-04 19:37:49 DEBUG [nia.core.brain] Streamed token:  I
+2025-09-04 19:37:49 DEBUG [nia.core.brain] Streamed token: 'm
+2025-09-04 19:37:49 DEBUG [nia.core.brain] Streamed token:  here
+2025-09-04 19:37:49 DEBUG [nia.core.brain] Streamed token:  to
+2025-09-04 19:37:50 DEBUG [nia.core.brain] Streamed token:  help
+2025-09-04 19:37:50 DEBUG [nia.core.brain] Streamed token:  or
+2025-09-04 19:37:50 DEBUG [nia.core.brain] Streamed token:  just
+2025-09-04 19:37:50 DEBUG [nia.core.brain] Streamed token:  chat
+2025-09-04 19:37:51 DEBUG [nia.core.brain] Streamed token:  whenever
+2025-09-04 19:37:51 DEBUG [nia.core.brain] Streamed token:  you
+2025-09-04 19:37:51 DEBUG [nia.core.brain] Streamed token: 're
+2025-09-04 19:37:51 DEBUG [nia.core.brain] Streamed token:  ready
+2025-09-04 19:37:51 DEBUG [nia.core.brain] Streamed token: .
+2025-09-04 19:37:52 DEBUG [nia.core.tts_manager] Queued for TTS: 'Hey there! I'm doing great thanks to all the fun chats like this one! How about you—what's on your mind today? I'm here to help or just chat whenever you're ready.'
+2025-09-04 19:37:52 INFO [nia.interface.voice] NIA (voice): Hey there! 😊 I'm doing great thanks to all the fun chats like this one! How about you—what's on your mind today? I'm here to help or just chat whenever you're ready.
+2025-09-04 19:37:53 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-04 19:38:19 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 19:38:19 INFO [nia] NIA is shutting down...
+2025-09-04 19:38:19 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-04 19:38:19 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-04 19:38:21 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-04 19:38:21 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-04 19:38:21 INFO [nia.core.brain] Brain shutting down.
+2025-09-04 19:38:21 INFO [nia] NIA shutdown complete.
+2025-09-04 19:38:21 INFO [nia] NIA shutdown requested by user.

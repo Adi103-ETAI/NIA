@@ -1,0 +1,228 @@
+2025-09-01 18:08:02,329 ERROR [nia.brain] Attempted to call Ollama but CLI is unavailable.
+2025-09-01 22:28:30,233 ERROR [nia.brain] Attempted to call Ollama but CLI is unavailable.
+2025-09-01 22:34:17,187 ERROR [nia.brain] Attempted to call Ollama but CLI is unavailable.
+2025-09-02 18:04:05 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠧ [K[?25h[?2026l[?2026h[?25l[1G⠇ [K[?25h[?2026l[?2026h[?25l[1G⠏ [K[?25h[?2026l[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (1.6 GiB)
+2025-09-02 18:04:06 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (1.6 GiB)
+2025-09-02 18:05:35 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠙ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠸ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?2026h[?25l[1G⠴ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (2.5 GiB)
+2025-09-02 18:05:36 ERROR [nia.core.brain] Ollama returned exit 1; stderr=[?2026h[?25l[1G⠋ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠹ [K[?25h[?2026l[?2026h[?25l[1G⠼ [K[?25h[?2026l[?25l[?2026h[?25l[1G[K[?25h[?2026l[2K[1G[?25hError: 500 Internal Server Error: model requires more system memory (4.7 GiB) than is available (2.5 GiB)
+2025-09-02 18:50:14 ERROR [nia.core.brain] HTTP request to Ollama failed: 
+2025-09-02 20:28:31 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-02 20:32:25 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-02 21:48:52 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-03 18:05:31 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-03 18:51:07 ERROR [nia.core.brain] An unexpected error occurred with model 'phi3:mini'.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 80, in generate_stream
+    async for chunk in self._stream_request(model_name, prompt):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 56, in _stream_request
+    response.raise_for_status()
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:11434/api/generate'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+2025-09-03 18:53:07 ERROR [nia.core.brain] All configured models failed to generate a response.
+2025-09-03 21:41:29 ERROR [nia.core.brain] An error occurred while streaming LLM response.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\core\brain.py", line 63, in generate_stream
+    async for chunk in self.llm.astream(messages):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_core\language_models\chat_models.py", line 613, in astream
+    async for chunk in self._astream(
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_ollama\chat_models.py", line 981, in _astream
+    async for chunk in self._aiterate_over_stream(messages, stop, **kwargs):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_ollama\chat_models.py", line 920, in _aiterate_over_stream
+    async for stream_resp in self._acreate_chat_stream(messages, stop, **kwargs):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\langchain_ollama\chat_models.py", line 728, in _acreate_chat_stream
+    async for part in await self._async_client.chat(**chat_params):
+  File "C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\ollama\_client.py", line 682, in inner
+    raise ResponseError(e.response.text, e.response.status_code) from None
+ollama._types.ResponseError: model "qwen2:4b" not found, try pulling it first (status code: 404)
+2025-09-03 21:42:05 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-03 22:17:54 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-03 22:33:39 ERROR [nia.core.stt_manager] STT transcription error: Future.result() takes no keyword arguments
+2025-09-03 22:33:51 ERROR [nia.core.stt_manager] STT transcription error: Future.result() takes no keyword arguments
+2025-09-03 22:34:49 ERROR [nia.core.stt_manager] STT transcription error: Future.result() takes no keyword arguments
+2025-09-03 22:34:49 ERROR [nia.core.stt_manager] STT transcription timed out
+2025-09-04 00:14:21 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 60, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 133, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 54, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
