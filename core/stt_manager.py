@@ -39,8 +39,14 @@ class _SileroVADProvider:
             self._vad_iter = VADIterator(vad_model, sampling_rate=self.sample_rate)
             self._enabled = True
             logger.info("Silero VAD initialized (sample_rate=%s).", self.sample_rate)
+        except ImportError as e:
+            logger.error("Silero VAD dependencies missing. VAD disabled. Reason: %s", e)
+            logger.error("To enable VAD, install: pip install torch silero-vad")
+            logger.error("For CPU-only PyTorch: pip install torch --index-url https://download.pytorch.org/whl/cpu")
+            self._enabled = False
         except Exception as e:
-            logger.warning("Silero VAD unavailable, VAD disabled. Reason: %s", e)
+            logger.error("Silero VAD initialization failed. VAD disabled. Reason: %s", e)
+            logger.error("To enable VAD, ensure torch and silero-vad are properly installed")
             self._enabled = False
 
     @property
@@ -80,8 +86,14 @@ class _DeepFilterNetProvider:
             self._enhancer = Enhancer(model_dir=model_dir)
             self._enabled = True
             logger.info("DeepFilterNet enhancer initialized (model_dir=%s).", model_dir)
+        except ImportError as e:
+            logger.error("DeepFilterNet dependencies missing. Enhancement disabled. Reason: %s", e)
+            logger.error("To enable DeepFilterNet, install: pip install git+https://github.com/Rikorose/DeepFilterNet.git")
+            logger.error("Note: DeepFilterNet requires a model directory. Check config/settings.yaml")
+            self._enabled = False
         except Exception as e:
-            logger.warning("DeepFilterNet unavailable, enhancement disabled. Reason: %s", e)
+            logger.error("DeepFilterNet initialization failed. Enhancement disabled. Reason: %s", e)
+            logger.error("To enable DeepFilterNet, ensure the package is installed and model directory is correct")
             self._enabled = False
 
     @property
@@ -105,7 +117,8 @@ class STTManager:
     def __init__(self, loop: asyncio.AbstractEventLoop):
         self.loop = loop
         self.sample_rate = 16000
-        self.blocksize = 8000
+        self.blocksize = 8000  # Keep large blocksize for Vosk
+        self.vad_blocksize = 512  # Silero VAD expects 512 samples for 16kHz
         self.model_path = settings["stt"]["vosk_model_path"]
         try:
             self.model = Model(self.model_path)
@@ -122,25 +135,37 @@ class STTManager:
         self.is_listening = False
         self._stop_event = asyncio.Event()
         self.stream = None
+        
+        # VAD frame buffer for proper frame size
+        self.vad_buffer = np.array([], dtype=np.float32)
 
         # Feature flags and providers
         stt_cfg = settings.get("stt", {})
         self.use_vad = bool(stt_cfg.get("vad", False)) and (stt_cfg.get("vad_engine", "").lower() == "silero")
         self.vad_trigger_ms = int(stt_cfg.get("vad_trigger_ms", 250))
         self.vad_release_ms = int(stt_cfg.get("vad_release_ms", 300))
+        # Check both old and new config locations for DeepFilterNet
         self.use_dfn = bool(stt_cfg.get("deepfilternet", False))
         self.dfn_model_dir = stt_cfg.get("deepfilternet_model_dir", None)
+        
+        # Also check the new stt_enhancement section
+        enhancement_cfg = settings.get("stt_enhancement", {})
+        if enhancement_cfg.get("enable", False):
+            self.use_dfn = True
+            self.dfn_model_dir = enhancement_cfg.get("model_dir", self.dfn_model_dir)
 
         self.vad_provider: Optional[_SileroVADProvider] = None
         if self.use_vad:
             self.vad_provider = _SileroVADProvider(self.sample_rate)
             if not self.vad_provider.enabled:
+                logger.warning("VAD was configured but is unavailable. Transcriptions may be less accurate without voice activity detection.")
                 self.use_vad = False
 
         self.dfn_provider: Optional[_DeepFilterNetProvider] = None
         if self.use_dfn:
             self.dfn_provider = _DeepFilterNetProvider(self.dfn_model_dir, self.sample_rate)
             if not self.dfn_provider.enabled:
+                logger.warning("DeepFilterNet was configured but is unavailable. Audio enhancement disabled.")
                 self.use_dfn = False
 
     def _audio_callback(self, indata, frames, time, status):
@@ -191,10 +216,15 @@ class STTManager:
                 in_speech = False
                 speech_ms = 0
                 silence_ms = 0
+                last_audio_time = 0
+                timeout_threshold = 5000  # 5 seconds of silence (increased for slower systems)
+                import time
+                start_time = time.time()
                 
                 while not self._stop_event.is_set():
                     try:
                         data = self.audio_queue.get(timeout=0.1)
+                        last_audio_time = 0  # Reset timeout when we get audio
                         # Compute frame duration in ms based on byte length
                         num_samples = len(data) // 2  # int16 mono
                         frame_ms = int(1000 * num_samples / self.sample_rate)
@@ -204,11 +234,33 @@ class STTManager:
 
                         is_speech_frame = True
                         if self.use_vad and self.vad_provider is not None:
-                            is_speech_frame = self.vad_provider.process_frame(audio_float)
+                            # Buffer audio for VAD processing (512 samples per frame)
+                            self.vad_buffer = np.concatenate([self.vad_buffer, audio_float])
+                            
+                            # Process VAD frames when we have exactly 512 samples
+                            if len(self.vad_buffer) >= self.vad_blocksize:
+                                vad_frame = self.vad_buffer[:self.vad_blocksize]
+                                self.vad_buffer = self.vad_buffer[self.vad_blocksize:]
+                                
+                                try:
+                                    is_speech_frame = self.vad_provider.process_frame(vad_frame)
+                                    # Debug logging
+                                    if is_speech_frame:
+                                        logger.debug("VAD detected speech frame")
+                                except Exception as e:
+                                    logger.error("Silero VAD runtime error; disabling VAD. Reason: %s", e)
+                                    self.use_vad = False
+                                    self.vad_provider = None
+                                    is_speech_frame = True
+                        else:
+                            # If VAD is disabled, always process audio
+                            is_speech_frame = True
 
                         if is_speech_frame:
                             speech_ms += frame_ms
                             silence_ms = 0
+                            last_audio_time = 0  # Reset timeout on speech
+                            start_time = time.time()  # Reset start time on speech
                             if not in_speech and speech_ms >= self.vad_trigger_ms:
                                 in_speech = True
 
@@ -224,9 +276,12 @@ class STTManager:
                                 text = result.get("text", "")
                                 if text:
                                     full_transcript += f" {text}"
+                                    logger.debug(f"STT partial result: {text}")
                             else:
                                 # Partial accepted; we do not accumulate partials here
-                                _ = self.recognizer.PartialResult()
+                                partial = self.recognizer.PartialResult()
+                                if partial:
+                                    logger.debug(f"STT partial: {partial}")
                         else:
                             # Non-speech frame
                             silence_ms += frame_ms
@@ -234,15 +289,25 @@ class STTManager:
                             if in_speech and silence_ms >= self.vad_release_ms:
                                 # End-of-utterance detected
                                 break
+                        
+                        # Check for overall timeout (5 seconds since last speech)
+                        if time.time() - start_time > 5.0:
+                            logger.debug("STT timeout after 5 seconds")
+                            break
+                            
                     except queue.Empty:
-                        # Timeout waiting for audio; use fallback idle detection if VAD off
-                        if not self.use_vad:
-                            silence_ms += 100
-                            if silence_ms >= 2000 and full_transcript:
-                                break
+                        # Timeout waiting for audio; increment timeout counter
+                        last_audio_time += 100
+                        if last_audio_time >= timeout_threshold:
+                            logger.debug(f"STT timeout after {timeout_threshold}ms of silence")
+                            break
                 
                 final_result = json.loads(self.recognizer.FinalResult())
-                full_transcript += f" {final_result.get('text', '')}"
+                final_text = final_result.get('text', '')
+                full_transcript += f" {final_text}"
+                
+                logger.debug(f"STT final result: '{full_transcript.strip()}'")
+                logger.debug(f"STT speech detection - in_speech: {in_speech}, speech_ms: {speech_ms}, silence_ms: {silence_ms}")
 
                 if not future.done():
                     self.loop.call_soon_threadsafe(future.set_result, full_transcript.strip())

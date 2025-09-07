@@ -95,7 +95,6 @@ class Brain:
         Synchronous wrapper for generate_stream for console interface compatibility.
         Collects the full response and returns it as a string.
         """
-        import asyncio
         
         async def _collect_response():
             full_response = ""

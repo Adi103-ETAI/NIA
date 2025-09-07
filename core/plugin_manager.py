@@ -9,7 +9,6 @@ from __future__ import annotations
 import importlib
 import logging
 import pkgutil
-import typing
 
 logger = logging.getLogger("nia.core.plugin_manager")
 

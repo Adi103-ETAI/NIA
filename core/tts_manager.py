@@ -13,17 +13,15 @@ import logging
 import queue
 import re
 import threading
-import pyttsx3
-import unicodedata
 from core.config import settings
+from core.tts_engine import speak as tts_speak
 
 logger = logging.getLogger("nia.core.tts_manager")
 
 class TTSManager:
     def __init__(self, loop: asyncio.AbstractEventLoop):
         self.loop = loop
-        self.engine = pyttsx3.init()
-        self._configure_engine()
+        # No longer need to initialize pyttsx3 directly - tts_engine handles this
 
         self.phrase_queue = queue.Queue()
         self.stop_event = threading.Event()
@@ -71,12 +69,6 @@ class TTSManager:
         
         return cleaned
 
-    def _configure_engine(self):
-        """Configures the pyttsx3 engine from settings."""
-        self.engine.setProperty("rate", settings["voice"]["tts_rate"])
-        voice_id = settings["voice"]["tts_voice_id"]
-        if voice_id:
-            self.engine.setProperty("voice", voice_id)
 
     def _tts_worker(self):
         """The main loop for the TTS worker thread."""
@@ -88,8 +80,10 @@ class TTSManager:
                     break
 
                 self.is_speaking_event.set()
-                self.engine.say(phrase)
-                self.engine.runAndWait()
+                # Use the new tts_engine module
+                success = tts_speak(phrase)
+                if not success:
+                    logger.warning("TTS engine failed to speak phrase")
                 self.is_speaking_event.clear()
 
                 self.phrase_queue.task_done()
@@ -162,9 +156,9 @@ class TTSManager:
         with self.phrase_queue.mutex:
             self.phrase_queue.queue.clear()
         
-        # If the engine is speaking, stop it.
-        if self.is_speaking_event.is_set():
-            self.engine.stop()
+        # Note: The tts_engine module doesn't support stopping mid-speech
+        # This is a limitation of the current implementation
+        # The stop will be effective for the next phrase in the queue
         
         self.buffer = "" # Clear the text buffer as well
 
@@ -178,4 +172,4 @@ class TTSManager:
         self.stop_event.set()
         self.phrase_queue.put(None)  # Sentinel to unblock the worker
         self.worker_thread.join(timeout=2)
-        self.engine.stop()
+        # No need to stop engine directly - tts_engine handles this

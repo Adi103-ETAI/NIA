@@ -18,13 +18,18 @@ stt:
   engine: "vosk"           # 'google' (online) or 'vosk' (offline, requires model)
   vosk_model_path: "model/vosk-model-small-en-us-0.15"
   # Voice Activity Detection (VAD) settings for barge-in
-  vad: true
+  vad: false
   vad_engine: "silero"     # 'silero' or 'none'
   vad_aggressiveness: 2    # Reserved for engines that use aggressiveness
   vad_trigger_ms: 250      # Milliseconds of speech to start listening (hysteresis)
   vad_release_ms: 300      # Milliseconds of silence to stop listening (end-of-speech)
   deepfilternet: true
   deepfilternet_model_dir: "deepfilternet2"  # Path to DFN model directory
+
+# STT Enhancement Settings
+stt_enhancement:
+  model_dir: "models/DeepFilterNet"  # DeepFilterNet model directory
+  enable: true                       # Enable audio enhancement
 
 # Brain (LLM) settings
 brain:
@@ -35,5 +40,5 @@ brain:
   system_prompt: "You are NIA, a helpful and friendly voice assistant. Keep your responses concise and conversational. Speak naturally as if you're having a real conversation. Be warm, engaging, and helpful."
   transport: "http"        # 'http' (streaming) or 'cli' (not implemented)
   stream: true
-  timeout_s: 120
+  timeout_s: 180           # Increased timeout for slower systems
   cancel_on_barge_in: true

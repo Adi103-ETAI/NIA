@@ -1,14 +1,28 @@
-python-dotenv>=1.0.0
-pyyaml>=6.0
+# Core dependencies
 pyttsx3
-speechrecognition 
 keyboard
-PyAudio
-PyYAML
-httpx
 vosk
 sounddevice
+soundfile
+pygame
+
+# TTS dependencies
+TTS
+torch
+torchaudio
+numpy
+
+# STT dependencies
+speech_recognition
+silero_vad
+
+# LangChain dependencies
 langchain
-langchain-community
-langchain-core
-langchain-ollama
+langchain_core
+langchain_ollama
+
+# Configuration
+yaml
+
+# Optional STT enhancements
+deepfilternet  # DeepFilterNet for noise suppression

@@ -1178,3 +1178,1939 @@ RuntimeError: Executor shutdown has been called
 2025-09-04 19:38:21 INFO [nia.core.brain] Brain shutting down.
 2025-09-04 19:38:21 INFO [nia] NIA shutdown complete.
 2025-09-04 19:38:21 INFO [nia] NIA shutdown requested by user.
+2025-09-06 15:30:08 INFO [nia] Starting NIA
+2025-09-06 15:30:22 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-06 15:30:23 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-06 15:30:23 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-06 15:30:23 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-06 15:30:26 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-06 15:30:29 WARNING [nia.core.stt_manager] Silero VAD unavailable, VAD disabled. Reason: No module named 'torch'
+2025-09-06 15:30:29 WARNING [nia.core.stt_manager] DeepFilterNet unavailable, enhancement disabled. Reason: No module named 'df'
+2025-09-06 15:30:29 INFO [nia] Using voice interface.
+2025-09-06 15:30:29 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-06 15:30:42 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-06 15:30:42 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-06 15:33:50 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-06 15:33:50 INFO [nia] NIA is shutting down...
+2025-09-06 15:33:50 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-06 15:33:50 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-06 15:33:50 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-06 15:33:50 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-06 15:33:50 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-06 15:33:50 INFO [nia.interface.voice] USER (voice): how are you how are you
+2025-09-06 15:33:50 INFO [nia.interface.voice] State changed to THINKING
+2025-09-06 15:33:50 INFO [nia.core.brain] Generating streaming response for prompt: 'how are you how are you'
+2025-09-06 15:33:50 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-06 15:33:50 INFO [nia.core.brain] Brain shutting down.
+2025-09-06 15:33:50 INFO [nia] NIA shutdown complete.
+2025-09-06 15:33:50 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-06 15:33:50 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-06 15:34:20 INFO [nia] NIA shutdown requested by user.
+2025-09-08 00:04:47 INFO [nia] Starting NIA
+2025-09-08 00:04:52 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-08 00:04:53 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-08 00:04:53 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-08 00:04:53 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-08 00:04:53 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-08 00:04:58 WARNING [nia.core.stt_manager] Silero VAD unavailable, VAD disabled. Reason: No module named 'torch'
+2025-09-08 00:04:58 WARNING [nia.core.stt_manager] DeepFilterNet unavailable, enhancement disabled. Reason: No module named 'df'
+2025-09-08 00:04:58 INFO [nia] Using voice interface.
+2025-09-08 00:04:58 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-08 00:05:01 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 00:05:01 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 00:11:52 WARNING [nia.interface.voice] Hotkey pressed in an unexpected state: VoiceState.LISTENING
+ 2025-09-08 00:14:58 INFO [nia] NIA shutdown requested by user.
+2025-09-08 00:35:43 INFO [nia] Starting NIA
+2025-09-08 00:35:54 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-08 00:35:55 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-08 00:35:55 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-08 00:35:55 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-08 00:35:55 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-08 00:36:09 INFO [nia.core.stt_manager] Silero VAD initialized (sample_rate=16000).
+2025-09-08 00:36:09 ERROR [nia.core.stt_manager] DeepFilterNet dependencies missing. Enhancement disabled. Reason: cannot import name 'Enhancer' from 'df.enhance' (C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\df\enhance.py)
+2025-09-08 00:36:09 ERROR [nia.core.stt_manager] To enable DeepFilterNet, install: pip install deepfilternet
+2025-09-08 00:36:09 ERROR [nia.core.stt_manager] Note: DeepFilterNet requires a model directory. Check config/settings.yaml
+2025-09-08 00:36:09 WARNING [nia.core.stt_manager] DeepFilterNet was configured but is unavailable. Audio enhancement disabled.
+2025-09-08 00:36:09 INFO [nia] Using voice interface.
+2025-09-08 00:36:09 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-08 00:36:48 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 00:36:48 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 00:36:50 ERROR [nia.core.stt_manager] Silero VAD runtime error; disabling VAD. Reason: The following operation failed in the TorchScript interpreter.
+Traceback of TorchScript, serialized code (most recent call last):
+  File "code/__torch__/vad/model/vad_annotator/___torch_mangle_0.py", line 27, in forward
+    if _2:
+      _3 = torch.format(_0, (torch.size(x0))[-1])
+      ops.prim.RaiseException(_3, "builtins.ValueError")
+      ~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    else:
+      pass
+
+Traceback of TorchScript, original code (most recent call last):
+  File "/home/keras/notebook/nvme1/adamnsandle/silero-models-research/vad/model/vad_annotator.py", line 563, in forward
+        num_samples = 512 if sr == 16000 else 256
+        if x.shape[-1] != num_samples:
+            raise ValueError(f"Provided number of samples is {x.shape[-1]} (Supported values: 256 for 8000 sample rate, 512 for 16000)")
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+    
+        batch_size = x.shape[0]
+builtins.ValueError: Provided number of samples is 8000 (Supported values: 256 for 8000 sample rate, 512 for 16000)
+
+2025-09-08 00:37:03 DEBUG [nia.interface.voice] Hotkey pressed while already listening, ignoring.
+2025-09-08 00:37:05 DEBUG [nia.interface.voice] Hotkey pressed while already listening, ignoring.
+2025-09-08 00:37:17 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-08 00:37:17 INFO [nia] NIA is shutting down...
+2025-09-08 00:37:17 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-08 00:37:17 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-08 00:37:17 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-08 00:37:17 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-08 00:37:17 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-08 00:37:17 INFO [nia.interface.voice] USER (voice): how are you
+2025-09-08 00:37:17 INFO [nia.interface.voice] State changed to THINKING
+2025-09-08 00:37:17 INFO [nia.core.brain] Generating streaming response for prompt: 'how are you'
+2025-09-08 00:37:18 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-08 00:37:18 INFO [nia.core.brain] Brain shutting down.
+2025-09-08 00:37:18 INFO [nia] NIA shutdown complete.
+2025-09-08 00:37:18 INFO [nia.interface.voice] Brain stream was cancelled due to barge-in.
+2025-09-08 00:37:18 INFO [nia.interface.voice] State changed to IDLE (response finished)
+2025-09-08 00:37:24 INFO [nia] NIA shutdown requested by user.
+2025-09-08 00:59:23 INFO [nia] Starting NIA
+2025-09-08 00:59:51 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-08 00:59:55 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-08 00:59:55 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-08 00:59:55 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-08 00:59:55 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-08 01:01:08 INFO [nia.core.stt_manager] Silero VAD initialized (sample_rate=16000).
+2025-09-08 01:01:10 ERROR [nia.core.stt_manager] DeepFilterNet dependencies missing. Enhancement disabled. Reason: cannot import name 'Enhancer' from 'df.enhance' (C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\df\enhance.py)
+2025-09-08 01:01:10 ERROR [nia.core.stt_manager] To enable DeepFilterNet, install: pip install git+https://github.com/Rikorose/DeepFilterNet.git
+2025-09-08 01:01:10 ERROR [nia.core.stt_manager] Note: DeepFilterNet requires a model directory. Check config/settings.yaml
+2025-09-08 01:01:10 WARNING [nia.core.stt_manager] DeepFilterNet was configured but is unavailable. Audio enhancement disabled.
+2025-09-08 01:01:10 INFO [nia] Using voice interface.
+2025-09-08 01:01:10 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-08 01:01:34 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 01:01:34 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 01:01:51 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-08 01:01:51 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-08 01:02:02 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 01:02:02 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 01:02:13 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-08 01:02:13 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-08 01:02:17 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 01:02:17 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 01:02:21 INFO [nia.core.stt_manager] STTManager stopped listening.
+2025-09-08 01:02:21 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-08 01:02:30 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-08 01:02:30 INFO [nia] NIA is shutting down...
+2025-09-08 01:02:30 INFO [nia.interface.voice] Shutting down VoiceInterface.
+2025-09-08 01:02:30 INFO [nia.core.tts_manager] Shutting down TTSManager.
+2025-09-08 01:02:30 INFO [nia.core.tts_manager] TTS worker thread finished.
+2025-09-08 01:02:30 INFO [nia.core.stt_manager] Shutting down STTManager.
+2025-09-08 01:02:30 INFO [nia.core.stt_manager] STTManager shutdown complete.
+2025-09-08 01:02:30 INFO [nia.core.brain] Brain shutting down.
+2025-09-08 01:02:30 INFO [nia] NIA shutdown complete.
+2025-09-08 01:03:09 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 01:03:09 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 01:03:09 ERROR [nia.interface.voice] An error occurred during speech recognition.
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\main.py", line 72, in main
+    await voice_iface.start()
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 51, in start
+    await asyncio.sleep(1)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\tasks.py", line 649, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\rajbh\NIA\interface\voice_interface.py", line 127, in _recognize_speech
+    user_text = await self.stt_manager.listen_and_transcribe()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rajbh\NIA\core\stt_manager.py", line 189, in listen_and_transcribe
+    self.loop.run_in_executor(None, self._transcription_loop, transcription_complete)
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 823, in run_in_executor
+    self._check_default_executor()
+  File "C:\Users\rajbh\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 524, in _check_default_executor
+    raise RuntimeError('Executor shutdown has been called')
+RuntimeError: Executor shutdown has been called
+2025-09-08 01:03:10 INFO [nia.interface.voice] State changed to IDLE (no speech recognized)
+2025-09-08 01:03:10 INFO [nia] NIA shutdown requested by user.
+2025-09-08 01:07:15 INFO [nia] Starting NIA
+2025-09-08 01:07:20 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-08 01:07:22 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-08 01:07:22 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-08 01:07:22 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-08 01:07:22 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-08 01:07:30 ERROR [nia.core.stt_manager] DeepFilterNet dependencies missing. Enhancement disabled. Reason: cannot import name 'Enhancer' from 'df.enhance' (C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\df\enhance.py)
+2025-09-08 01:07:30 ERROR [nia.core.stt_manager] To enable DeepFilterNet, install: pip install git+https://github.com/Rikorose/DeepFilterNet.git
+2025-09-08 01:07:30 ERROR [nia.core.stt_manager] Note: DeepFilterNet requires a model directory. Check config/settings.yaml
+2025-09-08 01:07:30 WARNING [nia.core.stt_manager] DeepFilterNet was configured but is unavailable. Audio enhancement disabled.
+2025-09-08 01:07:30 INFO [nia] Using voice interface.
+2025-09-08 01:07:30 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-08 01:07:33 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 01:07:33 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 01:07:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "however"
+}
+2025-09-08 01:07:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are you"
+}
+2025-09-08 01:07:37 DEBUG [nia.core.stt_manager] STT partial result: hello
+2025-09-08 01:07:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how"
+}
+2025-09-08 01:07:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are"
+}
+2025-09-08 01:07:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are you"
+}
+2025-09-08 01:07:48 DEBUG [nia.core.stt_manager] STT partial result: how are you
+2025-09-08 01:07:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:07:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:08:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:09:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:10:50 INFO [nia] Starting NIA
+2025-09-08 01:10:56 INFO [nia.core.personality] Personality configuration loaded successfully.
+2025-09-08 01:10:58 INFO [nia.core.brain] LangChain ChatOllama initialized with model: qwen3:4b
+2025-09-08 01:11:00 INFO [nia.core.brain] System prompt loaded: You are NIA, a helpful and friendly voice assistan...
+2025-09-08 01:11:00 INFO [nia] Brain health: {'llm_provider': 'Ollama (via LangChain ChatOllama)', 'configured_model': 'qwen3:4b', 'streaming_enabled': True, 'personality_loaded': True}
+2025-09-08 01:11:00 INFO [nia.core.tts_manager] TTSManager initialized and worker thread started.
+2025-09-08 01:11:16 ERROR [nia.core.stt_manager] DeepFilterNet dependencies missing. Enhancement disabled. Reason: cannot import name 'Enhancer' from 'df.enhance' (C:\Users\rajbh\NIA\venvNIA\Lib\site-packages\df\enhance.py)
+2025-09-08 01:11:16 ERROR [nia.core.stt_manager] To enable DeepFilterNet, install: pip install git+https://github.com/Rikorose/DeepFilterNet.git
+2025-09-08 01:11:16 ERROR [nia.core.stt_manager] Note: DeepFilterNet requires a model directory. Check config/settings.yaml
+2025-09-08 01:11:16 WARNING [nia.core.stt_manager] DeepFilterNet was configured but is unavailable. Audio enhancement disabled.
+2025-09-08 01:11:16 INFO [nia] Using voice interface.
+2025-09-08 01:11:16 INFO [nia.interface.voice] VoiceInterface started. Press 'SPACE' to speak.
+2025-09-08 01:11:28 INFO [nia.interface.voice] State changed to LISTENING
+2025-09-08 01:11:28 INFO [nia.core.stt_manager] STTManager is now listening.
+2025-09-08 01:11:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are"
+}
+2025-09-08 01:11:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are you"
+}
+2025-09-08 01:11:32 DEBUG [nia.core.stt_manager] STT partial result: how are you
+2025-09-08 01:11:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how"
+}
+2025-09-08 01:11:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are you"
+}
+2025-09-08 01:11:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : "how are you"
+}
+2025-09-08 01:11:43 DEBUG [nia.core.stt_manager] STT partial result: how are you
+2025-09-08 01:11:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:11:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:54 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:55 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:56 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:57 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:58 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:12:59 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:00 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:01 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:02 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:03 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:04 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:05 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:06 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:07 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:08 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:09 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:10 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:11 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:12 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:13 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:14 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:15 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:16 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:17 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:18 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:19 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:20 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:21 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:22 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:23 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:24 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:25 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:26 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:27 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:28 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:29 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:30 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:31 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:32 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:33 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:34 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:35 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:36 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:37 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:38 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:39 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:40 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:41 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:42 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:43 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:44 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:45 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:46 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:47 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:48 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:49 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:50 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:51 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:52 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}
+2025-09-08 01:13:53 DEBUG [nia.core.stt_manager] STT partial: {
+  "partial" : ""
+}

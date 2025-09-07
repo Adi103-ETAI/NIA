@@ -12,21 +12,12 @@ import asyncio
 import logging
 from enum import Enum, auto
 
-import speech_recognition as sr
-import keyboard
-
-from core.brain import Brain
-from core.config import settings
-import asyncio
-import logging
-from enum import Enum, auto
-
 import keyboard
 
 from core.brain import Brain
 from core.config import settings
 from core.tts_manager import TTSManager
-from core.stt_manager import STTManager # Import the new manager
+from core.stt_manager import STTManager
 
 logger = logging.getLogger("nia.interface.voice")
 
@@ -51,6 +42,11 @@ class VoiceInterface:
     async def start(self):
         """Starts the main voice interface loop and hotkey listener."""
         logger.info(f"VoiceInterface started. Press '{self.hotkey.upper()}' to speak.")
+        print("=" * 60)
+        print("🎙️  NIA Voice Assistant Ready!")
+        print(f"📢 Press '{self.hotkey.upper()}' to speak")
+        print("⏱️  Note: Responses may be slower on this system")
+        print("=" * 60)
         # Start the hotkey listener as a managed asyncio task
         self.hotkey_listener_task = self.loop.run_in_executor(None, self._hotkey_listener)
         
@@ -95,6 +91,9 @@ class VoiceInterface:
         # If we are idle, start a new listening session.
         if self.state == VoiceState.IDLE:
             await self.listen_and_respond()
+        elif self.state == VoiceState.LISTENING:
+            # If already listening, ignore the hotkey press to avoid interrupting ongoing transcription
+            logger.debug("Hotkey pressed while already listening, ignoring.")
         else:
             logger.warning("Hotkey pressed in an unexpected state: %s", self.state)
 
@@ -111,6 +110,7 @@ class VoiceInterface:
 
         self.state = VoiceState.THINKING
         logger.info("State changed to THINKING")
+        print("🤔 Thinking... (this may take a moment on slower systems)")
         
         # Create and run the brain streaming task
         self.current_brain_task = asyncio.create_task(self._stream_brain_to_tts(user_text))
@@ -127,20 +127,21 @@ class VoiceInterface:
         """
         Recognizes speech using the streaming STTManager.
         """
-        print("Listening...")
+        print("🎤 Listening... (speak clearly, I'll wait up to 5 seconds)")
         try:
             # This single call now handles the entire streaming recognition process
             user_text = await self.stt_manager.listen_and_transcribe()
             
             if user_text:
-                print(f"You said: {user_text}")
+                print(f"✅ You said: {user_text}")
                 logger.info("USER (voice): %s", user_text)
                 return user_text
             else:
-                print("Sorry, I didn't catch that.")
+                print("❌ Sorry, I didn't catch that. Please try again.")
                 return None
         except Exception as e:
             logger.exception("An error occurred during speech recognition.")
+            print("❌ Speech recognition error. Please try again.")
             return None
 
     async def _stream_brain_to_tts(self, prompt: str):
@@ -157,6 +158,7 @@ class VoiceInterface:
                     if self.state != VoiceState.SPEAKING:
                         self.state = VoiceState.SPEAKING
                         logger.info("State changed to SPEAKING")
+                        print("🔊 Speaking...")
 
                     self.tts_manager.add_to_buffer(token)
                 
