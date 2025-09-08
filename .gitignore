@@ -1,2 +1,60 @@
-# Python virtual environment
+# Python virtual environments
 venvNIA/
+venv/
+env/
+.venv/
+
+# Python cache and build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Large model files (keep in repo but ignore large binaries)
+# models/
+# DeepFilterNet/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large binary files that shouldn't be in Git
+*.dll
+*.lib
+*.so
+*.dylib
+*.exe
+*.bin
