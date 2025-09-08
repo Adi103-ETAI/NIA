@@ -18,6 +18,8 @@ from core.brain import Brain
 from core.config import settings
 from core.tts_manager import TTSManager
 from core.stt_manager import STTManager
+from core.autonomy_agent import AutonomyAgent
+from core.confirmation_manager import ConfirmationManager
 
 logger = logging.getLogger("nia.interface.voice")
 
@@ -28,16 +30,23 @@ class VoiceState(Enum):
     SPEAKING = auto()
 
 class VoiceInterface:
-    def __init__(self, brain: Brain, tts_manager: TTSManager, stt_manager: STTManager):
+    def __init__(self, brain: Brain, tts_manager: TTSManager, stt_manager: STTManager, autonomy: AutonomyAgent | None = None):
         self.brain = brain
         self.tts_manager = tts_manager
         self.stt_manager = stt_manager # Use the new manager
         self.hotkey = settings["voice"]["hotkey"]
+        self.hybrid_cfg = settings.get("hybrid", {})
+        self.passive_enabled = bool(self.hybrid_cfg.get("passive_enabled", True))
+        self.autonomy_enabled = bool(settings.get("autonomy", {}).get("enabled", True))
+        self.autonomy = autonomy
+        self.autonomy_cfg = settings.get("autonomy", {})
+        self.confirmation_manager = ConfirmationManager(tts_manager, stt_manager, self.loop)
         
         self.state = VoiceState.IDLE
         self.current_brain_task = None
         self.loop = asyncio.get_event_loop()
         self.hotkey_listener_task = None
+        self.autonomy_consumer_task = None
 
     async def start(self):
         """Starts the main voice interface loop and hotkey listener."""
@@ -49,6 +58,13 @@ class VoiceInterface:
         print("=" * 60)
         # Start the hotkey listener as a managed asyncio task
         self.hotkey_listener_task = self.loop.run_in_executor(None, self._hotkey_listener)
+        # Start passive wake-word listener
+        if self.passive_enabled:
+            self.stt_manager.start_wake_listener(self._on_wake_detected)
+        # Start autonomy agent and consumer
+        if self.autonomy and self.autonomy_enabled:
+            self.autonomy.start()
+            self.autonomy_consumer_task = asyncio.create_task(self._consume_autonomy_suggestions())
         
         try:
             # Keep the main task alive to allow the listener to run
@@ -84,18 +100,31 @@ class VoiceInterface:
             self.tts_manager.stop()
             if self.current_brain_task:
                 self.current_brain_task.cancel()
+            # Clear any pending autonomy confirmations on barge-in
+            self.confirmation_manager.clear_pending()
             # The existing listen_and_respond task will catch the cancellation
             # and transition to IDLE. The new listening session will start from there.
             return # Stop here, let the existing flow handle the state change.
 
         # If we are idle, start a new listening session.
         if self.state == VoiceState.IDLE:
+            # Pause autonomy while actively interacting
+            if self.autonomy:
+                self.autonomy.pause()
+            # Clear any pending autonomy confirmations when starting new interaction
+            self.confirmation_manager.clear_pending()
             await self.listen_and_respond()
         elif self.state == VoiceState.LISTENING:
             # If already listening, ignore the hotkey press to avoid interrupting ongoing transcription
             logger.debug("Hotkey pressed while already listening, ignoring.")
         else:
             logger.warning("Hotkey pressed in an unexpected state: %s", self.state)
+
+    def _on_wake_detected(self):
+        """Callback invoked by STTManager when a wake word is detected."""
+        logger.info("Wake-word callback fired.")
+        # Forward to the same handler as hotkey
+        asyncio.run_coroutine_threadsafe(self.handle_hotkey_press(), self.loop)
 
     async def listen_and_respond(self):
         """Listens for user input, processes it, and generates a response."""
@@ -106,7 +135,17 @@ class VoiceInterface:
         if not user_text:
             self.state = VoiceState.IDLE
             logger.info("State changed to IDLE (no speech recognized)")
+            # Resume autonomy when done
+            if self.autonomy:
+                self.autonomy.resume()
             return
+        
+        # Feed user input to autonomy agent for context analysis
+        if self.autonomy:
+            self.autonomy.update_user_input(user_text)
+        
+        # Update confirmation manager activity
+        self.confirmation_manager.update_activity()
 
         self.state = VoiceState.THINKING
         logger.info("State changed to THINKING")
@@ -122,6 +161,9 @@ class VoiceInterface:
         
         self.state = VoiceState.IDLE
         logger.info("State changed to IDLE (response finished)")
+        # Resume autonomy when interaction finishes
+        if self.autonomy:
+            self.autonomy.resume()
 
     async def _recognize_speech(self) -> str | None:
         """
@@ -184,3 +226,63 @@ class VoiceInterface:
             self.hotkey_listener_task.cancel()
         if self.current_brain_task:
             self.current_brain_task.cancel()
+        if self.autonomy_consumer_task:
+            self.autonomy_consumer_task.cancel()
+        # Stop passive listener
+        self.stt_manager.stop_wake_listener()
+        if self.autonomy:
+            self.autonomy.stop()
+
+    async def _consume_autonomy_suggestions(self):
+        """Continuously consumes autonomous suggestions with context-aware confirmation."""
+        while True:
+            await asyncio.sleep(0.1)
+            if self.state != VoiceState.IDLE:
+                continue
+            if not self.autonomy:
+                await asyncio.sleep(1)
+                continue
+            suggestion = await self.autonomy.get_next_suggestion_async(timeout_s=0.1)
+            if not suggestion:
+                continue
+            # Double-check idle before processing
+            if self.state == VoiceState.IDLE:
+                # Use confirmation manager for context-aware confirmation
+                await self.confirmation_manager.add_suggestion(suggestion)
+
+    async def _confirm_autonomy(self) -> bool:
+        """
+        Ask the user if they want to hear an autonomous suggestion.
+        Returns True if user confirms, False otherwise.
+        """
+        prompt = self.autonomy_cfg.get("confirm_prompt", "I have a suggestion. Would you like to hear it?")
+        yes_words = [w.lower() for w in self.autonomy_cfg.get("confirm_yes_keywords", ["yes", "sure", "go ahead", "okay"]) ]
+        no_words = [w.lower() for w in self.autonomy_cfg.get("confirm_no_keywords", ["no", "not now", "later"]) ]
+        timeout_s = int(self.autonomy_cfg.get("confirm_timeout_s", 4))
+
+        # Speak the confirmation prompt
+        self.state = VoiceState.SPEAKING
+        await self.tts_manager.speak_async(prompt)
+        # Listen briefly for a response
+        self.state = VoiceState.LISTENING
+        try:
+            resp = await asyncio.wait_for(self.stt_manager.listen_and_transcribe(), timeout=timeout_s)
+        except asyncio.TimeoutError:
+            resp = None
+        except Exception:
+            logger.exception("Error during autonomy confirmation listening.")
+            resp = None
+        finally:
+            # If we were interrupted by barge-in elsewhere, state might have changed.
+            if self.state == VoiceState.LISTENING:
+                self.state = VoiceState.IDLE
+
+        if not resp:
+            return False
+        r = resp.strip().lower()
+        if any(word in r for word in yes_words):
+            return True
+        if any(word in r for word in no_words):
+            return False
+        # Default to not speaking if unclear
+        return False

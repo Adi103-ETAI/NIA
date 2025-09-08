@@ -135,6 +135,9 @@ class STTManager:
         self.is_listening = False
         self._stop_event = asyncio.Event()
         self.stream = None
+        self._wake_listener_running = False
+        self._wake_listener_thread = None
+        self._wake_callback = None
         
         # VAD frame buffer for proper frame size
         self.vad_buffer = np.array([], dtype=np.float32)
@@ -167,6 +170,11 @@ class STTManager:
             if not self.dfn_provider.enabled:
                 logger.warning("DeepFilterNet was configured but is unavailable. Audio enhancement disabled.")
                 self.use_dfn = False
+
+        # Wake-word configuration
+        hybrid_cfg = settings.get("hybrid", {})
+        self.wake_words = [w.lower() for w in hybrid_cfg.get("wake_words", ["nia", "hey nia", "okay nia"]) ]
+        self.passive_enabled = bool(hybrid_cfg.get("passive_enabled", True))
 
     def _audio_callback(self, indata, frames, time, status):
         """This is called (from a separate thread) for each audio block."""
@@ -320,9 +328,86 @@ class STTManager:
         """Signals the transcription loop to stop and closes the audio stream."""
         logger.info("Shutting down STTManager.")
         self._stop_event.set()
+        self.stop_wake_listener()
         if self.stream and not self.stream.closed:
             # This is a blocking call, but it's necessary to ensure the stream is closed.
             # Since we're shutting down, a small block is acceptable.
             self.stream.stop()
             self.stream.close()
         logger.info("STTManager shutdown complete.")
+
+    # --- Passive wake-word listener -------------------------------------------------
+    def start_wake_listener(self, on_wake_detected):
+        """
+        Starts a lightweight background listener that detects configured wake words
+        and invokes the provided callback in the asyncio loop thread.
+        """
+        if self._wake_listener_running:
+            return
+        self._wake_listener_running = True
+        self._wake_callback = on_wake_detected
+        self._wake_listener_thread = asyncio.get_event_loop().run_in_executor(None, self._wake_loop)
+
+    def stop_wake_listener(self):
+        """Stops the passive wake listener if running."""
+        self._wake_listener_running = False
+
+    def _wake_loop(self):
+        """Blocking loop running in a worker thread for wake-word spotting."""
+        logger.info("Starting passive wake-word listener.")
+        # Separate recognizer to avoid interfering with active session
+        recognizer = KaldiRecognizer(self.model, self.sample_rate)
+        try:
+            with sd.RawInputStream(samplerate=self.sample_rate, blocksize=4000, dtype='int16',
+                                   channels=1) as stream:
+                while self._wake_listener_running:
+                    try:
+                        data, _ = stream.read(4000)
+                        if not data:
+                            continue
+                        if recognizer.AcceptWaveform(data):
+                            try:
+                                result = json.loads(recognizer.Result())
+                            except Exception:
+                                result = {"text": ""}
+                            text = (result.get("text") or "").strip().lower()
+                            if text:
+                                logger.debug("Wake listener heard: %s", text)
+                                if self._contains_wake_word(text):
+                                    logger.info("Wake word detected: '%s'", text)
+                                    if self._wake_callback:
+                                        self.loop.call_soon_threadsafe(self._wake_callback)
+                                    # Avoid immediate retriggering
+                                    import time
+                                    time.sleep(0.6)
+                        else:
+                            # Look at partials for faster wake-up
+                            partial_json = recognizer.PartialResult()
+                            if partial_json:
+                                try:
+                                    pj = json.loads(partial_json)
+                                    partial_text = (pj.get("partial") or "").lower()
+                                except Exception:
+                                    partial_text = ""
+                                if partial_text and self._contains_wake_word(partial_text):
+                                    logger.info("Wake word detected (partial): '%s'", partial_text)
+                                    if self._wake_callback:
+                                        self.loop.call_soon_threadsafe(self._wake_callback)
+                                    import time
+                                    time.sleep(0.6)
+                    except Exception:
+                        # Keep listener resilient
+                        logger.exception("Error in wake listener loop; continuing.")
+                        import time
+                        time.sleep(0.2)
+        except Exception:
+            logger.exception("Failed to start wake listener stream.")
+        finally:
+            logger.info("Passive wake-word listener stopped.")
+
+    def _contains_wake_word(self, text: str) -> bool:
+        lowered = (text or "").lower()
+        for w in self.wake_words:
+            if w in lowered:
+                return True
+        return False

@@ -9,6 +9,7 @@ A voice-enabled AI assistant with real-time speech-to-text, text-to-speech, and 
 - **Text-to-Speech**: Streaming TTS with multiple engine support
 - **Language Model**: Ollama integration with streaming responses
 - **Real-time Processing**: Low-latency voice interaction
+- **Hybrid Autonomy**: Intelligent decision-point detection with polite confirmation flow
 
 ## Installation
 
@@ -105,14 +106,92 @@ stt_enhancement:
 python main.py
 ```
 
-2. Press **SPACE** to start speaking
-3. Release SPACE when finished speaking
-4. NIA will process your speech and respond
+2. Activate NIA in one of these ways:
+   - **Press SPACE**: Start/stop speaking (push-to-talk)
+   - **Say wake words**: "NIA", "Hey NIA", "Okay NIA", "Buddy", "Hey Buddy" (hands-free)
+   - **Wait for autonomy**: NIA may offer suggestions when it detects decision points
+
+3. NIA will process your speech and respond
 
 ### Voice Commands
 
-- **Press SPACE**: Start/stop speaking
+- **Press SPACE**: Start/stop speaking (push-to-talk mode)
+- **Say wake words**: "NIA", "Hey NIA", "Okay NIA", "Buddy", "Hey Buddy" (hands-free mode)
 - **Press SPACE while NIA is speaking**: Barge-in (interrupt and speak)
+- **Respond to autonomy prompts**: "Yes" to hear suggestions, "No" to decline
+
+## Hybrid Autonomy Mode (Optional)
+
+NIA includes an intelligent autonomy system that can detect when you're facing decisions or need help, and politely offer suggestions. This feature is designed to be helpful without being intrusive.
+
+### How It Works
+
+1. **Decision-Point Detection**: NIA analyzes your speech for decision indicators like:
+   - Decision keywords: "should I", "what if", "maybe", "I'm not sure", "help me decide"
+   - High-value topics: work, project, meeting, deadline, plan, schedule, task, problem, issue
+   - Hesitation patterns: "um", "uh", "well", "I mean", "you know"
+   - Repetition: When you mention the same topic multiple times
+
+2. **Polite Confirmation Flow**: When NIA detects a decision point:
+   - Waits for 2-3 seconds of silence (idle detection)
+   - Asks politely: "I have a suggestion that might help—would you like to hear it?"
+   - Only proceeds if you confirm with "yes", "sure", "okay", etc.
+   - Cancels if you say "no", "not now", "later", or if there's no response
+
+3. **Barge-in Priority**: Your active interactions always take priority:
+   - Pressing SPACE or using wake words interrupts any autonomy suggestions
+   - NIA pauses autonomy during active conversations
+   - Resumes autonomy only when you're idle
+
+4. **Configurable Behavior**: All autonomy settings can be customized in `config/settings.yaml`
+
+### Configuration
+
+Add or modify the autonomy section in `config/settings.yaml`:
+
+```yaml
+autonomy:
+  enabled: true                           # Enable/disable autonomy
+  confirm_before_speaking: true          # Always ask before speaking suggestions
+  confirm_prompt: "I have a suggestion that might help—would you like to hear it?"
+  confirm_yes_keywords:                  # Keywords that confirm suggestions
+    - "yes"
+    - "sure" 
+    - "okay"
+    - "go ahead"
+    - "please"
+    - "sounds good"
+  confirm_no_keywords:                   # Keywords that decline suggestions
+    - "no"
+    - "not now"
+    - "later"
+    - "skip"
+    - "dismiss"
+  confirm_timeout_s: 4                   # Seconds to wait for confirmation
+  suggestion_interval_s: 90              # Minimum seconds between suggestions
+  confidence_threshold: 0.6              # Minimum confidence to suggest (0.0-1.0)
+  decision_keywords:                     # Customize decision detection keywords
+    - "should i"
+    - "what if"
+    - "maybe"
+    - "i think"
+    - "i'm not sure"
+    - "help me decide"
+  high_value_topics:                     # Topics that trigger suggestions
+    - "work"
+    - "project"
+    - "meeting"
+    - "deadline"
+    - "plan"
+    - "schedule"
+    - "task"
+    - "problem"
+    - "issue"
+    - "decision"
+    - "choice"
+    - "option"
+    - "strategy"
+```
 
 ## Troubleshooting
 
@@ -135,23 +214,33 @@ python main.py
   ollama pull qwen3:4b
   ```
 
+### Autonomy Issues
+
+- **Autonomy suggestions too frequent**: Adjust `autonomy.suggestion_interval_s` or `autonomy.confidence_threshold` in `config/settings.yaml`
+- **Autonomy not working**: Check that `autonomy.enabled` is set to `true` in `config/settings.yaml`
+- **Suggestions too intrusive**: Increase `autonomy.confidence_threshold` or disable `autonomy.confirm_before_speaking`
+
 ## Development
 
 ### Project Structure
 
 ```
 NIA/
-├── core/                 # Core functionality
-│   ├── brain.py         # LLM integration
-│   ├── stt_manager.py   # Speech-to-text
-│   ├── tts_manager.py   # Text-to-speech
-│   └── config.py        # Configuration
-├── interface/           # User interfaces
+├── core/                    # Core functionality
+│   ├── brain.py            # LLM integration
+│   ├── stt_manager.py      # Speech-to-text
+│   ├── tts_manager.py      # Text-to-speech
+│   ├── autonomy_agent.py   # Hybrid autonomy system
+│   ├── confirmation_manager.py  # Autonomy confirmation flow
+│   └── config.py           # Configuration
+├── interface/              # User interfaces
 │   └── voice_interface.py
-├── config/              # Configuration files
+├── config/                 # Configuration files
 │   └── settings.yaml
-├── model/               # AI models
-└── data/logs/          # Log files
+├── model/                  # AI models
+├── tests/                  # Test suite
+│   └── test_hybrid.py     # Hybrid autonomy tests
+└── data/logs/             # Log files
 ```
 
 ### Adding New Features

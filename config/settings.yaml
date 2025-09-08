@@ -13,6 +13,16 @@ voice:
   # Regex to identify sentence boundaries for cleaner chunking
   sentence_boundary_regex: "[.!?…]+\\s"
 
+# Hybrid listening configuration
+hybrid:
+  passive_enabled: true        # Enable passive wake-word listening
+  wake_words:
+    - "nia"
+    - "hey nia"
+    - "okay nia"
+    - "buddy"
+    - "hey buddy"
+
 # Speech-to-Text and Voice Activity Detection
 stt:
   engine: "vosk"           # 'google' (online) or 'vosk' (offline, requires model)
@@ -42,3 +52,66 @@ brain:
   stream: true
   timeout_s: 180           # Increased timeout for slower systems
   cancel_on_barge_in: true
+
+# Autonomy agent configuration
+autonomy:
+  enabled: true
+  suggestion_interval_s: 90
+  confidence_threshold: 0.6  # Only suggest if confidence >= this value
+  decision_keywords:
+    - "should i"
+    - "what if"
+    - "maybe"
+    - "i think"
+    - "i'm not sure"
+    - "help me decide"
+    - "i need to"
+    - "i want to"
+    - "i have to"
+    - "i should"
+    - "i could"
+    - "i might"
+    - "what do you think"
+    - "any suggestions"
+    - "any ideas"
+    - "what would you do"
+  high_value_topics:
+    - "work"
+    - "project"
+    - "meeting"
+    - "deadline"
+    - "plan"
+    - "schedule"
+    - "task"
+    - "problem"
+    - "issue"
+    - "decision"
+    - "choice"
+    - "option"
+    - "strategy"
+  hesitation_patterns:
+    - "\\b(um|uh|er|ah|hmm|well|so|like|you know)\\b"
+    - "\\b(i mean|i guess|i suppose|sort of|kind of)\\b"
+  repetition_threshold: 2  # Suggest if same topic mentioned this many times
+  # Legacy prompts (fallback)
+  prompts:
+    - "Would you like a summary of recent updates?"
+    - "Need me to set a reminder for anything?"
+    - "I can check your schedule if you want."
+  # Confirmation settings
+  confirm_before_speaking: true
+  confirm_prompt: "I have a suggestion that might help—would you like to hear it?"
+  confirm_yes_keywords:
+    - "yes"
+    - "sure"
+    - "okay"
+    - "go ahead"
+    - "please"
+    - "sounds good"
+  confirm_no_keywords:
+    - "no"
+    - "not now"
+    - "later"
+    - "skip"
+    - "dismiss"
+  confirm_timeout_s: 4

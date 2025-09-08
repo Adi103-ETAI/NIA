@@ -47,6 +47,7 @@ async def main():
     from core.brain import Brain
     from core.tts_manager import TTSManager
     from core.stt_manager import STTManager # Import the new manager
+    from core.autonomy_agent import AutonomyAgent
     from interface.console_interface import ConsoleInterface
     from interface.voice_interface import VoiceInterface
 
@@ -62,13 +63,15 @@ async def main():
     loop = asyncio.get_event_loop()
     tts_manager = None
     stt_manager = None # Add stt_manager
+    autonomy = None
     
     try:
         if use_voice:
             tts_manager = TTSManager(loop)
             stt_manager = STTManager(loop) # Initialize it
+            autonomy = AutonomyAgent(loop)
             logger.info("Using voice interface.")
-            voice_iface = VoiceInterface(brain, tts_manager, stt_manager) # Pass it in
+            voice_iface = VoiceInterface(brain, tts_manager, stt_manager, autonomy) # Pass it in
             await voice_iface.start()
         else:
             logger.info("Using console interface.")

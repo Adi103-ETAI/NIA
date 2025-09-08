@@ -6,15 +6,21 @@ sounddevice
 soundfile
 pygame
 
-# TTS dependencies
-TTS
+# Testing
+pytest
+pytest-asyncio
+
+# TTS dependencies (optional: Coqui TTS requires MSVC build tools)
+# Coqui TTS: pip install TTS
 torch
 torchaudio
 numpy
 
 # STT dependencies
-speech_recognition
+SpeechRecognition
 silero_vad
+# Optional STT enhancements
+deepfilternet  # DeepFilterNet for noise suppression
 
 # LangChain dependencies
 langchain
@@ -22,7 +28,5 @@ langchain_core
 langchain_ollama
 
 # Configuration
-yaml
+PyYAML
 
-# Optional STT enhancements
-deepfilternet  # DeepFilterNet for noise suppression
