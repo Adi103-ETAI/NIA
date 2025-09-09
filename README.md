@@ -9,7 +9,9 @@ A voice-enabled AI assistant with real-time speech-to-text, text-to-speech, and 
 - **Text-to-Speech**: Streaming TTS with multiple engine support
 - **Language Model**: Ollama integration with streaming responses
 - **Real-time Processing**: Low-latency voice interaction
-- **Hybrid Autonomy**: Intelligent decision-point detection with polite confirmation flow
+- **Semantic Memory**: LanceDB-powered conversation memory with Ollama embeddings
+- **Context-Aware Autonomy**: Intelligent suggestions based on conversation history and decision patterns
+- **Knowledge Management**: Vector-based knowledge retrieval and storage
 
 ## Installation
 
@@ -61,6 +63,15 @@ mv vosk-model-small-en-us-0.15 model/
 git clone https://github.com/Rikorose/DeepFilterNet-models.git models/DeepFilterNet
 ```
 
+7. Install Ollama and pull required models:
+```bash
+# Install Ollama (visit https://ollama.ai for installation instructions)
+# Pull the main language model
+ollama pull qwen3:4b
+# Pull the embedding model for semantic memory
+ollama pull nomic-embed-text
+```
+
 ### Enhanced STT Features (Optional)
 
 For improved speech recognition accuracy, install additional dependencies:
@@ -97,6 +108,23 @@ stt:
 stt_enhancement:
   model_dir: "models/DeepFilterNet"  # DeepFilterNet model directory
   enable: true                       # Enable audio enhancement
+
+# Memory and Knowledge Management
+memory:
+  enabled: true                      # Enable semantic memory
+  db_path: "data/memory"            # LanceDB storage path
+  collection: "conversations"       # Collection name
+  embedding_model: "nomic-embed-text"  # Ollama embedding model
+  enable_embeddings: true           # Enable vector embeddings
+  max_recent_queries: 5             # Max recent messages to retrieve
+  min_similarity_score: 0.7        # Minimum similarity threshold
+
+knowledge:
+  enabled: true                     # Enable knowledge management
+  retriever_type: "vector"          # Vector-based retrieval
+  top_k: 5                          # Number of results to return
+  sources: []                       # Knowledge sources
+  index_path: "data/knowledge"      # Knowledge index path
 ```
 
 ## Usage
@@ -120,30 +148,94 @@ python main.py
 - **Press SPACE while NIA is speaking**: Barge-in (interrupt and speak)
 - **Respond to autonomy prompts**: "Yes" to hear suggestions, "No" to decline
 
-## Hybrid Autonomy Mode (Optional)
+## Memory and Knowledge Management
 
-NIA includes an intelligent autonomy system that can detect when you're facing decisions or need help, and politely offer suggestions. This feature is designed to be helpful without being intrusive.
+NIA includes a sophisticated memory system that learns from your conversations and provides context-aware responses.
 
-### How It Works
+### Semantic Memory System
 
-1. **Decision-Point Detection**: NIA analyzes your speech for decision indicators like:
-   - Decision keywords: "should I", "what if", "maybe", "I'm not sure", "help me decide"
-   - High-value topics: work, project, meeting, deadline, plan, schedule, task, problem, issue
-   - Hesitation patterns: "um", "uh", "well", "I mean", "you know"
-   - Repetition: When you mention the same topic multiple times
+The memory system uses **LanceDB** for persistent storage and **Ollama embeddings** for semantic understanding:
 
-2. **Polite Confirmation Flow**: When NIA detects a decision point:
+- **Conversation Storage**: All interactions are automatically stored with timestamps
+- **Semantic Search**: Find relevant past conversations using natural language queries
+- **Vector Embeddings**: Messages are converted to embeddings using the `nomic-embed-text` model
+- **Context Retrieval**: Recent and relevant conversations are retrieved for context-aware responses
+
+### How Memory Works
+
+1. **Automatic Storage**: Every user input and NIA response is stored in the memory database
+2. **Semantic Indexing**: Messages are embedded into vector space for semantic similarity
+3. **Context Retrieval**: When you ask questions, NIA searches for relevant past conversations
+4. **Memory Integration**: Retrieved context is included in responses for more personalized interactions
+
+### Memory Configuration
+
+Configure memory settings in `config/settings.yaml`:
+
+```yaml
+memory:
+  enabled: true                      # Enable/disable memory system
+  db_path: "data/memory"            # LanceDB database path
+  collection: "conversations"       # Collection name for conversations
+  embedding_model: "nomic-embed-text"  # Ollama embedding model
+  enable_embeddings: true           # Enable vector embeddings
+  max_recent_queries: 5             # Maximum recent messages to retrieve
+  min_similarity_score: 0.7        # Minimum similarity score for retrieval
+```
+
+### Knowledge Management
+
+The knowledge system provides long-term information storage and retrieval:
+
+- **Vector Storage**: Knowledge items are stored as embeddings for semantic search
+- **Flexible Sources**: Support for various knowledge sources and formats
+- **Top-K Retrieval**: Configurable number of most relevant results
+- **Integration**: Knowledge is seamlessly integrated with conversation context
+
+### Knowledge Configuration
+
+```yaml
+knowledge:
+  enabled: true                     # Enable/disable knowledge system
+  retriever_type: "vector"          # Vector-based retrieval method
+  top_k: 5                          # Number of top results to return
+  sources: []                       # Knowledge sources (expandable)
+  index_path: "data/knowledge"      # Knowledge index storage path
+```
+
+## Context-Aware Autonomy Mode
+
+NIA includes an intelligent autonomy system that uses conversation memory to provide context-aware suggestions. The system detects decision points and offers helpful suggestions based on your conversation history.
+
+### How Context-Aware Autonomy Works
+
+1. **Decision-Point Detection**: NIA analyzes your speech for decision indicators:
+   - **Decision keywords**: "should I", "what if", "maybe", "I'm not sure", "help me decide"
+   - **High-value topics**: work, project, meeting, deadline, plan, schedule, task, problem, issue
+   - **Hesitation patterns**: "um", "uh", "well", "I mean", "you know"
+   - **Repetition**: When you mention the same topic multiple times
+
+2. **Memory-Enhanced Suggestions**: When NIA detects a decision point:
+   - **Semantic Search**: Queries conversation memory for relevant past discussions
+   - **Context Retrieval**: Finds similar situations or topics from your history
+   - **Intelligent Suggestions**: Generates suggestions based on both current context and past conversations
+   - **Confidence Scoring**: Uses confidence thresholds to determine suggestion quality
+
+3. **Polite Confirmation Flow**: 
    - Waits for 2-3 seconds of silence (idle detection)
    - Asks politely: "I have a suggestion that might help—would you like to hear it?"
    - Only proceeds if you confirm with "yes", "sure", "okay", etc.
    - Cancels if you say "no", "not now", "later", or if there's no response
 
-3. **Barge-in Priority**: Your active interactions always take priority:
+4. **Barge-in Priority**: Your active interactions always take priority:
    - Pressing SPACE or using wake words interrupts any autonomy suggestions
    - NIA pauses autonomy during active conversations
    - Resumes autonomy only when you're idle
 
-4. **Configurable Behavior**: All autonomy settings can be customized in `config/settings.yaml`
+5. **Memory Integration**: 
+   - **Context-Aware Responses**: Suggestions include relevant past conversation snippets
+   - **Learning from History**: NIA learns from your preferences and decision patterns
+   - **Semantic Understanding**: Uses embeddings to find semantically similar past discussions
 
 ### Configuration
 
@@ -170,6 +262,9 @@ autonomy:
   confirm_timeout_s: 4                   # Seconds to wait for confirmation
   suggestion_interval_s: 90              # Minimum seconds between suggestions
   confidence_threshold: 0.6              # Minimum confidence to suggest (0.0-1.0)
+  # Memory integration for context-aware suggestions
+  use_memory: true                       # Enable memory-based suggestions
+  max_memory_snippets: 5                 # Maximum memory snippets to include
   decision_keywords:                     # Customize decision detection keywords
     - "should i"
     - "what if"
@@ -226,21 +321,33 @@ autonomy:
 
 ```
 NIA/
-├── core/                    # Core functionality
-│   ├── brain.py            # LLM integration
-│   ├── stt_manager.py      # Speech-to-text
-│   ├── tts_manager.py      # Text-to-speech
-│   ├── autonomy_agent.py   # Hybrid autonomy system
-│   ├── confirmation_manager.py  # Autonomy confirmation flow
-│   └── config.py           # Configuration
-├── interface/              # User interfaces
-│   └── voice_interface.py
-├── config/                 # Configuration files
-│   └── settings.yaml
-├── model/                  # AI models
-├── tests/                  # Test suite
-│   └── test_hybrid.py     # Hybrid autonomy tests
-└── data/logs/             # Log files
+├── core/                           # Core functionality
+│   ├── brain.py                   # LLM integration with streaming
+│   ├── stt_manager.py             # Speech-to-text with VAD and enhancement
+│   ├── tts_manager.py             # Text-to-speech with streaming
+│   ├── autonomy_agent.py          # Context-aware autonomy system
+│   ├── confirmation_manager.py    # Autonomy confirmation flow
+│   ├── memory_manager.py          # Semantic memory with LanceDB
+│   ├── knowledge_manager.py       # Knowledge retrieval and storage
+│   ├── personality.py             # Personality configuration
+│   └── config.py                  # Configuration loader
+├── interface/                      # User interfaces
+│   ├── voice_interface.py         # Voice interaction interface
+│   └── console_interface.py       # Console interface
+├── config/                         # Configuration files
+│   ├── settings.yaml              # Main configuration
+│   └── personality.yaml           # Personality settings
+├── data/                          # Data storage
+│   ├── memory/                    # LanceDB memory database
+│   ├── knowledge/                 # Knowledge base storage
+│   └── logs/                      # Application logs
+├── model/                         # AI models
+│   └── vosk-model-small-en-us-0.15/  # Vosk STT model
+├── tests/                         # Test suite
+│   ├── test_hybrid.py            # Autonomy system tests
+│   ├── test_memory.py            # Memory system tests
+│   └── test_knowledge.py         # Knowledge system tests
+└── requirements.txt              # Python dependencies
 ```
 
 ### Adding New Features

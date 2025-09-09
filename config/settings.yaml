@@ -15,7 +15,7 @@ voice:
 
 # Hybrid listening configuration
 hybrid:
-  passive_enabled: true        # Enable passive wake-word listening
+  passive_enabled: false       # Enable passive wake-word listening
   wake_words:
     - "nia"
     - "hey nia"
@@ -115,3 +115,24 @@ autonomy:
     - "skip"
     - "dismiss"
   confirm_timeout_s: 4
+  # Semantic memory integration for autonomy suggestions
+  use_memory: true
+  max_memory_snippets: 5
+
+# Semantic Memory Settings
+memory:
+  enabled: true
+  db_path: "data/memory"
+  collection: "conversations"
+  embedding_model: "nomic-embed-text"
+  enable_embeddings: true
+  max_recent_queries: 5
+  min_similarity_score: 0.7
+
+# Long-term Knowledge Settings
+knowledge:
+  enabled: true   # Re-enabled now that nomic-embed-text model is available
+  retriever_type: "vector"
+  top_k: 5
+  sources: []
+  index_path: "data/knowledge"

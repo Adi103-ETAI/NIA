@@ -8,7 +8,6 @@ import logging
 import os
 import tempfile
 import threading
-from typing import Optional
 
 logger = logging.getLogger("nia.core.tts_engine")
 

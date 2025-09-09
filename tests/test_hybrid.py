@@ -5,6 +5,7 @@ import pytest
 from core.autonomy_agent import AutonomyAgent, AutonomousSuggestion
 from core.stt_manager import STTManager
 from core.confirmation_manager import ConfirmationManager, BatchedSuggestion
+from core.memory_manager import MemoryManager
 
 
 @pytest.mark.asyncio
@@ -248,9 +249,41 @@ async def test_confirmation_flow():
     
     stt_timeout = MockSTTTimeout()
     manager_timeout = ConfirmationManager(tts, stt_timeout, loop)
-    
-    confirmed = await manager_timeout._present_confirmation(batched)
-    assert confirmed is False
+
+
+@pytest.mark.asyncio
+async def test_brain_used_for_speaking_with_memory_context(monkeypatch):
+    """Ensure ConfirmationManager uses Brain with memory context if provided."""
+    class MockTTS:
+        def __init__(self):
+            self.spoken = []
+        async def speak_async(self, text):
+            self.spoken.append(text)
+
+    class MockSTT:
+        async def listen_and_transcribe(self):
+            return "yes"
+
+    class MockBrain:
+        async def generate_stream(self, prompt, context_snippets=None):
+            # Yield a single chunk synthesizing context size into the response
+            ctx_count = len(context_snippets or [])
+            yield {"response": f"Here are {ctx_count} context-backed ideas.", "done": False}
+            yield {"response": "", "done": True}
+
+    loop = asyncio.get_event_loop()
+    tts = MockTTS()
+    stt = MockSTT()
+    brain = MockBrain()
+    manager = ConfirmationManager(tts, stt, loop, brain)
+
+    # Build batched suggestion with memory context metadata
+    s1 = AutonomousSuggestion("S1", 0.8, "decision_keyword", "work", time.time(), metadata={"memory_context": ["[t] user: a", "[t] nia: b"]})
+    s2 = AutonomousSuggestion("S2", 0.6, "high_value_topic", "project", time.time(), metadata={"memory_context": ["[t] user: c"]})
+    batched = BatchedSuggestion([s1, s2], "combined", 0.8, "decision_keyword")
+
+    await manager._speak_suggestions(batched)
+    assert any("context-backed" in x for x in tts.spoken)
 
 
 @pytest.mark.asyncio

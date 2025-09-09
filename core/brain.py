@@ -7,7 +7,7 @@ core.brain — Powered by LangChain + Ollama for natural conversation.
 """
 import asyncio
 import logging
-from typing import AsyncGenerator
+from typing import AsyncGenerator, List
 
 # LangChain Imports
 from langchain_ollama import ChatOllama
@@ -16,6 +16,10 @@ from langchain_core.messages import HumanMessage, SystemMessage
 # Local Imports
 from core.config import settings
 from core.personality import get_system_prompt
+try:
+    from core.knowledge_manager import KnowledgeManager  # optional use
+except Exception:
+    KnowledgeManager = None  # type: ignore
 
 logger = logging.getLogger("nia.core.brain")
 
@@ -38,10 +42,15 @@ class Brain:
             timeout=self.timeout
         )
         
+        # Optional knowledge manager
+        self.knowledge_enabled = bool(settings.get("knowledge", {}).get("enabled", True))
+        self.knowledge_top_k = int(settings.get("knowledge", {}).get("top_k", 5))
+        self.knowledge_mgr = KnowledgeManager() if self.knowledge_enabled and KnowledgeManager else None
+
         logger.info("LangChain ChatOllama initialized with model: %s", self.model_name)
         logger.info("System prompt loaded: %s", self.system_prompt[:50] + "..." if len(self.system_prompt) > 50 else self.system_prompt)
 
-    async def generate_stream(self, prompt: str) -> AsyncGenerator[dict, None]:
+    async def generate_stream(self, prompt: str, context_snippets: list[str] | None = None) -> AsyncGenerator[dict, None]:
         """
         Streams the LLM response token by token for real-time voice interaction.
         Injects personality through system prompts for consistent voice and tone.
@@ -49,14 +58,31 @@ class Brain:
         logger.info("Generating streaming response for prompt: '%s'", prompt)
         
         try:
-            # Create messages with system prompt for personality injection
+            # Create messages with system prompt for personality injection and optional context
             messages = []
             
             # Add system prompt if available for personality
             if self.system_prompt:
                 messages.append(SystemMessage(content=self.system_prompt))
             
-            # Add user prompt
+            # Retrieve knowledge docs if enabled
+            knowledge_snippets: List[str] = []
+            if self.knowledge_mgr is not None and self.knowledge_enabled:
+                try:
+                    docs = self.knowledge_mgr.query(prompt, top_k=self.knowledge_top_k)
+                    knowledge_snippets = [f"{d.get('source', d.get('name',''))}: {d.get('text','')}" for d in docs]
+                except Exception:
+                    knowledge_snippets = []
+
+            # Add memory/context as a preface if provided
+            if context_snippets:
+                context_text = "\n".join(f"- {s}" for s in context_snippets)
+                messages.append(HumanMessage(content=f"Context to consider (recent related notes):\n{context_text}"))
+            # Add knowledge snippets if available
+            if knowledge_snippets:
+                knowledge_text = "\n".join(f"- {s}" for s in knowledge_snippets)
+                messages.append(HumanMessage(content=f"Relevant knowledge base excerpts:\n{knowledge_text}"))
+            # Add user prompt last
             messages.append(HumanMessage(content=prompt))
             
             # Stream the response from the LLM

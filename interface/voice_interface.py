@@ -40,11 +40,13 @@ class VoiceInterface:
         self.autonomy_enabled = bool(settings.get("autonomy", {}).get("enabled", True))
         self.autonomy = autonomy
         self.autonomy_cfg = settings.get("autonomy", {})
-        self.confirmation_manager = ConfirmationManager(tts_manager, stt_manager, self.loop)
+        self.use_memory = bool(self.autonomy_cfg.get("use_memory", True))
+        self.max_memory_snippets = int(self.autonomy_cfg.get("max_memory_snippets", 5))
         
         self.state = VoiceState.IDLE
         self.current_brain_task = None
         self.loop = asyncio.get_event_loop()
+        self.confirmation_manager = ConfirmationManager(tts_manager, stt_manager, self.loop, brain)
         self.hotkey_listener_task = None
         self.autonomy_consumer_task = None
 
@@ -83,7 +85,12 @@ class VoiceInterface:
             keyboard.wait(self.hotkey)
             if self.loop.is_running():
                 # Schedule the async handler to run in the main event loop
-                asyncio.run_coroutine_threadsafe(self.handle_hotkey_press(), self.loop)
+                future = asyncio.run_coroutine_threadsafe(self.handle_hotkey_press(), self.loop)
+                # Wait for the coroutine to complete to avoid the warning
+                try:
+                    future.result(timeout=1.0)
+                except Exception:
+                    pass  # Ignore errors during shutdown
         except (KeyboardInterrupt, EOFError):
             logger.info("Hotkey listener thread shutting down.")
             return # Exit thread

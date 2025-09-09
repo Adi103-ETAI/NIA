@@ -82,7 +82,14 @@ class _DeepFilterNetProvider:
         if not model_dir:
             return
         try:
-            from df.enhance import Enhancer  # type: ignore
+            # Try different import paths for DeepFilterNet
+            try:
+                from df.enhance import Enhancer  # type: ignore
+            except ImportError:
+                # Try alternative import path
+                from df import enhance  # type: ignore
+                Enhancer = enhance.Enhancer
+            
             self._enhancer = Enhancer(model_dir=model_dir)
             self._enabled = True
             logger.info("DeepFilterNet enhancer initialized (model_dir=%s).", model_dir)
@@ -105,7 +112,14 @@ class _DeepFilterNetProvider:
             return audio_float_mono
         try:
             # The Enhancer API supports streaming; use frame-wise enhancement.
-            enhanced = self._enhancer.enhance_frame(audio_float_mono, sr=self.sample_rate)
+            # Try different method names in case the API has changed
+            if hasattr(self._enhancer, 'enhance_frame'):
+                enhanced = self._enhancer.enhance_frame(audio_float_mono, sr=self.sample_rate)
+            elif hasattr(self._enhancer, 'enhance'):
+                enhanced = self._enhancer.enhance(audio_float_mono, sr=self.sample_rate)
+            else:
+                logger.warning("DeepFilterNet enhancer doesn't support frame enhancement, skipping")
+                return audio_float_mono
             return enhanced
         except Exception as e:
             logger.error("DeepFilterNet runtime error; disabling enhancement. Reason: %s", e)
@@ -365,7 +379,12 @@ class STTManager:
                         data, _ = stream.read(4000)
                         if not data:
                             continue
-                        if recognizer.AcceptWaveform(data):
+                        # Convert numpy array to bytes for Vosk
+                        if hasattr(data, 'tobytes'):
+                            data_bytes = data.tobytes()
+                        else:
+                            data_bytes = bytes(data)
+                        if recognizer.AcceptWaveform(data_bytes):
                             try:
                                 result = json.loads(recognizer.Result())
                             except Exception:

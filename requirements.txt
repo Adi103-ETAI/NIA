@@ -26,6 +26,8 @@ deepfilternet  # DeepFilterNet for noise suppression
 langchain
 langchain_core
 langchain_ollama
+lancedb
+farm-haystack
 
 # Configuration
 PyYAML

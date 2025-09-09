@@ -14,6 +14,7 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from core.autonomy_agent import AutonomousSuggestion
+from typing import Any
 
 logger = logging.getLogger("nia.core.confirmation")
 
@@ -27,10 +28,11 @@ class BatchedSuggestion:
 
 
 class ConfirmationManager:
-    def __init__(self, tts_manager, stt_manager, loop: asyncio.AbstractEventLoop):
+    def __init__(self, tts_manager, stt_manager, loop: asyncio.AbstractEventLoop, brain: Any | None = None):
         self.tts_manager = tts_manager
         self.stt_manager = stt_manager
         self.loop = loop
+        self.brain = brain
         self._idle_detection_time = 3.0  # seconds of silence before prompting
         self._batching_window = 2.0  # seconds to collect multiple suggestions
         self._last_activity_time = 0.0
@@ -177,8 +179,36 @@ class ConfirmationManager:
                 return "I have a thought. Would you like to hear it?"
 
     async def _speak_suggestions(self, batched: BatchedSuggestion):
-        """Speak the confirmed suggestions."""
-        await self.tts_manager.speak_async(batched.combined_text)
+        """Speak the confirmed suggestions using Brain with memory context if available."""
+        context_snippets: list[str] = []
+        for s in batched.suggestions:
+            if s.metadata and isinstance(s.metadata, dict):
+                ctx = s.metadata.get("memory_context")
+                if isinstance(ctx, list):
+                    context_snippets.extend(ctx)
+        # Deduplicate while preserving order
+        seen = set()
+        deduped = []
+        for c in context_snippets:
+            if c not in seen:
+                deduped.append(c)
+                seen.add(c)
+
+        if self.brain:
+            # Ask Brain to generate a concise suggestion based on the combined text
+            prompt = f"Provide a concise, helpful suggestion given this context and user signals: {batched.combined_text}"
+            full = ""
+            try:
+                async for chunk in self.brain.generate_stream(prompt, context_snippets=deduped[:8]):
+                    if chunk.get("response"):
+                        full += chunk["response"]
+                text_to_speak = full.strip() or batched.combined_text
+            except Exception:
+                text_to_speak = batched.combined_text
+        else:
+            text_to_speak = batched.combined_text
+
+        await self.tts_manager.speak_async(text_to_speak)
 
     def clear_pending(self):
         """Clear any pending suggestions (e.g., on barge-in)."""

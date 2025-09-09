@@ -64,6 +64,7 @@ async def main():
     tts_manager = None
     stt_manager = None # Add stt_manager
     autonomy = None
+    voice_iface = None  # Initialize voice_iface to None
     
     try:
         if use_voice:
