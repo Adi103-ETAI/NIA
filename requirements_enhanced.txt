@@ -1,0 +1,161 @@
+# Enhanced NIA Requirements with LLM API and Database Integration
+
+# Core dependencies (existing)
+pyttsx3
+keyboard
+vosk
+sounddevice
+soundfile
+pygame
+
+# Testing
+pytest
+pytest-asyncio
+
+# TTS dependencies (optional: Coqui TTS requires MSVC build tools)
+torch
+torchaudio
+numpy
+
+# STT dependencies
+SpeechRecognition
+silero_vad
+# Optional STT enhancements
+deepfilternet  # DeepFilterNet for noise suppression
+
+# LangChain dependencies (existing)
+langchain
+langchain_core
+langchain_ollama
+lancedb
+farm-haystack
+
+# Configuration
+PyYAML
+
+# === NEW DEPENDENCIES FOR ENHANCED FEATURES ===
+
+# Multi-Provider LLM Support
+openai>=1.12.0                    # OpenAI API support
+anthropic>=0.18.0                 # Anthropic Claude API support
+google-generativeai>=0.4.0        # Google Gemini API support (optional)
+
+# Database Support
+sqlalchemy>=2.0.0                 # SQLAlchemy ORM
+alembic>=1.13.0                   # Database migrations
+
+# Database Drivers
+# SQLite (built into Python)
+aiosqlite>=0.19.0                 # Async SQLite support
+
+# PostgreSQL (optional)
+psycopg2-binary>=2.9.0            # PostgreSQL driver
+asyncpg>=0.29.0                   # Async PostgreSQL driver
+
+# MySQL (optional) 
+PyMySQL>=1.1.0                    # MySQL driver
+aiomysql>=0.2.0                   # Async MySQL driver
+
+# Caching and Session Management
+redis>=5.0.0                      # Redis client
+hiredis>=2.3.0                    # High-performance Redis parser
+
+# API Framework
+fastapi>=0.104.0                  # Modern API framework
+uvicorn[standard]>=0.24.0         # ASGI server
+python-multipart>=0.0.6          # Form data parsing
+python-jose[cryptography]>=3.3.0 # JWT tokens
+
+# Authentication and Security
+passlib[bcrypt]>=1.7.4            # Password hashing
+python-decouple>=3.8              # Environment variable management
+cryptography>=41.0.0              # Encryption utilities
+
+# System Monitoring and Analytics
+psutil>=5.9.0                     # System resource monitoring
+prometheus-client>=0.19.0         # Metrics collection
+structlog>=23.2.0                 # Structured logging
+
+# Backup and Cloud Storage (optional)
+boto3>=1.34.0                     # AWS S3 support
+google-cloud-storage>=2.10.0      # Google Cloud Storage (optional)
+azure-storage-blob>=12.19.0       # Azure Blob Storage (optional)
+
+# Data Processing and Analysis
+pandas>=2.1.0                     # Data analysis (for analytics)
+matplotlib>=3.8.0                 # Plotting (for system monitoring)
+seaborn>=0.13.0                   # Statistical visualization
+
+# Enhanced Text Processing
+textstat>=0.7.3                   # Text statistics
+spacy>=3.7.0                      # NLP processing (optional)
+nltk>=3.8.1                       # Natural language toolkit (optional)
+
+# File Processing
+pypdf2>=3.0.1                     # PDF processing
+python-docx>=1.1.0                # Word document processing
+markdown>=3.5.0                   # Markdown processing
+
+# HTTP Client (for API integrations)
+httpx>=0.26.0                     # Modern HTTP client with async support
+aiohttp>=3.9.0                    # Alternative async HTTP client
+
+# Background Task Processing
+celery>=5.3.0                     # Distributed task queue (optional)
+flower>=2.0.0                     # Celery monitoring (optional)
+
+# Development and Testing Tools
+black>=23.12.0                    # Code formatting
+flake8>=6.1.0                     # Code linting
+mypy>=1.8.0                       # Type checking
+pre-commit>=3.6.0                 # Git hooks
+coverage>=7.3.0                   # Test coverage
+
+# Documentation (optional)
+mkdocs>=1.5.0                     # Documentation generator
+mkdocs-material>=9.5.0            # Material theme for MkDocs
+
+# Performance Optimization
+cachetools>=5.3.0                 # In-memory caching utilities
+memory-profiler>=0.61.0           # Memory usage profiling
+line-profiler>=4.1.0              # Line-by-line profiling
+
+# Async Utilities
+asyncio-mqtt>=0.16.0              # MQTT client (for IoT integration, optional)
+aiofiles>=23.2.1                  # Async file operations
+aioredis>=2.0.1                   # Async Redis client
+
+# Configuration Management
+dynaconf>=3.2.4                   # Advanced configuration management (alternative to PyYAML)
+python-dotenv>=1.0.0              # Environment file loading
+
+# Monitoring and Observability
+opentelemetry-api>=1.21.0         # Distributed tracing (optional)
+opentelemetry-sdk>=1.21.0         # Tracing SDK (optional)
+sentry-sdk>=1.39.0                # Error tracking (optional)
+
+# Rate Limiting and Security
+slowapi>=0.1.9                    # Rate limiting for FastAPI
+python-limiter>=3.5.0             # Rate limiting utilities
+
+# Data Validation
+pydantic>=2.5.0                   # Data validation and serialization
+email-validator>=2.1.0            # Email validation
+
+# Utilities
+python-slugify>=8.0.1             # URL-friendly string generation
+shortuuid>=1.0.11                 # Short UUID generation
+click>=8.1.7                      # Command-line interface framework
+rich>=13.7.0                      # Rich text and beautiful formatting
+
+# Time and Date Utilities
+python-dateutil>=2.8.2            # Date parsing and manipulation
+pytz>=2023.3                      # Timezone support
+
+# JSON and Data Serialization
+orjson>=3.9.0                     # Fast JSON serialization
+msgpack>=1.0.7                    # Efficient binary serialization
+
+# Networking
+websockets>=12.0                  # WebSocket support
+sse-starlette>=1.8.0              # Server-sent events for FastAPI

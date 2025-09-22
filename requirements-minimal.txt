@@ -1,0 +1,73 @@
+# NIA Enhanced - Minimal Requirements
+# Essential dependencies only for basic enhanced functionality
+
+# ============================================================================
+# CORE DEPENDENCIES
+# ============================================================================
+
+# Original NIA Core
+pyttsx3>=2.90
+keyboard>=0.13.5
+vosk>=0.3.45
+sounddevice>=0.4.6
+soundfile>=0.12.1
+pygame>=2.5.2
+SpeechRecognition>=3.10.0
+torch>=2.1.0
+torchaudio>=2.1.0
+numpy>=1.24.0
+PyYAML>=6.0.1
+
+# LangChain (existing)
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-ollama>=0.1.0
+lancedb>=0.4.0
+
+# ============================================================================
+# ESSENTIAL ENHANCED FEATURES
+# ============================================================================
+
+# Multi-Provider LLM Support (choose one or more)
+openai>=1.12.0                    # OpenAI API
+# anthropic>=0.18.0               # Uncomment for Anthropic support
+
+# Basic Database Support
+sqlalchemy>=2.0.25
+aiosqlite>=0.19.0                 # SQLite only for minimal setup
+
+# HTTP Client for APIs
+httpx>=0.26.0
+
+# Data Validation
+pydantic>=2.5.3
+
+# Environment Management
+python-dotenv>=1.0.0
+
+# Async Utilities
+aiofiles>=23.2.1
+
+# ============================================================================
+# OPTIONAL ENHANCEMENTS (uncomment as needed)
+# ============================================================================
+
+# Enhanced STT
+# silero_vad>=4.0.0
+# deepfilternet>=0.5.6
+
+# Web API (uncomment for API features)
+# fastapi>=0.109.0
+# uvicorn[standard]>=0.27.0
+
+# Caching (uncomment for Redis)
+# redis>=5.0.1
+# aioredis>=2.0.1
+
+# PostgreSQL (uncomment for production database)
+# psycopg2-binary>=2.9.9
+# asyncpg>=0.29.0
+
+# Analytics (uncomment for monitoring)
+# psutil>=5.9.8
+# pandas>=2.2.0

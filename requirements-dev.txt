@@ -1,0 +1,253 @@
+# NIA Enhanced - Development Requirements
+# Comprehensive development environment with testing, debugging, and code quality tools
+
+# Include base requirements
+-r requirements.txt
+
+# ============================================================================
+# TESTING FRAMEWORK AND UTILITIES
+# ============================================================================
+
+# Core Testing
+pytest>=8.0.0                     # Modern Python testing framework
+pytest-asyncio>=0.23.0            # Async support for pytest
+pytest-mock>=3.12.0               # Mock object library
+pytest-cov>=4.0.0                 # Coverage plugin for pytest
+pytest-xdist>=3.5.0               # Parallel test execution
+pytest-benchmark>=4.0.0           # Benchmarking plugin
+pytest-timeout>=2.2.0             # Test timeout handling
+
+# Coverage Analysis
+coverage>=7.4.0                   # Code coverage measurement
+coverage-badge>=1.1.0             # Generate coverage badges
+
+# Test Data and Fixtures
+factory-boy>=3.3.0                # Test fixtures replacement
+faker>=22.0.0                     # Generate fake data for testing
+responses>=0.24.0                  # Mock HTTP requests
+httpx-mock>=0.11.0                # Mock httpx requests
+aioresponses>=0.7.6               # Mock aiohttp requests
+
+# ============================================================================
+# CODE QUALITY AND FORMATTING
+# ============================================================================
+
+# Code Formatting
+black>=24.1.0                     # Python code formatter
+isort>=5.13.0                     # Import sorting
+autopep8>=2.0.4                   # PEP 8 formatting
+
+# Linting
+flake8>=7.0.0                     # Style guide enforcement
+pylint>=3.0.3                     # Static code analysis
+bandit>=1.7.5                     # Security linter
+safety>=3.0.0                     # Check for security vulnerabilities
+
+# Type Checking
+mypy>=1.8.0                       # Static type checker
+types-PyYAML>=6.0.12              # Type stubs for PyYAML
+types-redis>=4.6.0                # Type stubs for Redis
+types-requests>=2.31.0            # Type stubs for requests
+
+# Import Analysis
+vulture>=2.10                     # Find unused code
+pyflakes>=3.2.0                   # Simple static code analysis
+
+# ============================================================================
+# PRE-COMMIT AND GIT HOOKS
+# ============================================================================
+
+pre-commit>=3.6.0                 # Git hooks framework
+pre-commit-hooks>=4.5.0           # Collection of useful pre-commit hooks
+commitizen>=3.13.0                # Standardize commit messages
+
+# ============================================================================
+# DEBUGGING AND PROFILING
+# ============================================================================
+
+# Interactive Debugging
+ipdb>=0.13.13                     # IPython debugger
+pudb>=2024.1                      # Full-screen console debugger
+remote-pdb>=2.1.0                 # Remote debugging
+
+# Performance Profiling
+memory-profiler>=0.61.0           # Memory usage profiler
+line-profiler>=4.1.0              # Line-by-line profiler
+py-spy>=0.3.14                    # Sampling profiler
+snakeviz>=2.2.0                   # Profile visualization
+
+# ============================================================================
+# DOCUMENTATION TOOLS
+# ============================================================================
+
+# Documentation Generation
+sphinx>=7.2.0                     # Documentation generator
+sphinx-rtd-theme>=2.0.0           # Read the Docs theme
+sphinx-autodoc-typehints>=1.25.0  # Type hints in documentation
+myst-parser>=2.0.0                # Markdown support for Sphinx
+
+# API Documentation
+fastapi-docs>=0.1.0               # Enhanced FastAPI documentation
+redoc-cli>=0.13.2                 # ReDoc CLI for OpenAPI docs
+
+# Markdown Documentation
+mkdocs>=1.5.0                     # Static site generator
+mkdocs-material>=9.5.0            # Material theme for MkDocs
+mkdocs-include-markdown-plugin>=6.0.4  # Include external markdown files
+
+# ============================================================================
+# DEVELOPMENT SERVERS AND TOOLS
+# ============================================================================
+
+# Development Servers
+watchdog>=3.0.0                   # File system event monitoring
+python-multipart>=0.0.6          # For FastAPI file uploads
+uvicorn[standard]>=0.27.0         # ASGI server with auto-reload
+
+# Database Tools
+sqlalchemy-utils>=0.41.1          # SQLAlchemy utilities
+alembic>=1.13.1                   # Database migrations
+
+# ============================================================================
+# JUPYTER AND INTERACTIVE DEVELOPMENT
+# ============================================================================
+
+# Jupyter Environment
+jupyter>=1.0.0                    # Jupyter metapackage
+jupyterlab>=4.0.0                 # Modern Jupyter interface
+notebook>=7.0.0                   # Classic Jupyter notebook
+ipython>=8.20.0                   # Enhanced Python shell
+
+# Jupyter Extensions
+jupyterlab-git>=0.50.0            # Git integration for JupyterLab
+nbconvert>=7.14.0                 # Convert notebooks to other formats
+nbformat>=5.9.0                   # Notebook format support
+
+# ============================================================================
+# ENVIRONMENT AND DEPENDENCY MANAGEMENT
+# ============================================================================
+
+# Environment Management
+pip-tools>=7.3.0                  # Pin dependencies
+pipdeptree>=2.13.0                # Display dependency tree
+pipenv>=2023.12.1                 # Virtual environment management
+
+# Requirements Analysis
+safety>=3.0.0                     # Check for known security vulnerabilities
+licensecheck>=2023.1.1            # License compatibility checking
+
+# ============================================================================
+# HTTP AND API TESTING
+# ============================================================================
+
+# HTTP Testing
+requests>=2.31.0                  # Simple HTTP library
+httpie>=3.2.0                     # Command-line HTTP client
+curl-cffi>=0.6.0                  # Python binding for curl-impersonate
+
+# WebSocket Testing
+websocket-client>=1.7.0           # WebSocket client library
+
+# ============================================================================
+# DATABASE TESTING AND MANAGEMENT
+# ============================================================================
+
+# Database Testing
+pytest-postgresql>=5.0.0          # PostgreSQL testing
+pytest-redis>=3.0.2               # Redis testing
+sqlalchemy-factory>=0.4.0         # SQLAlchemy test factories
+
+# Database Administration
+pgcli>=4.0.1                      # PostgreSQL CLI with autocompletion
+redis-cli>=4.5.4                  # Redis command-line interface
+
+# ============================================================================
+# LOAD TESTING AND PERFORMANCE
+# ============================================================================
+
+# Load Testing
+locust>=2.20.0                    # Modern load testing framework
+aioloadtest>=1.1.0                # Async load testing
+
+# Performance Monitoring
+py-spy>=0.3.14                    # Sampling profiler for Python
+scalene>=1.5.26                   # CPU and memory profiler
+
+# ============================================================================
+# CONTAINERIZATION AND DEPLOYMENT TOOLS
+# ============================================================================
+
+# Container Tools
+docker>=7.0.0                     # Docker SDK for Python
+docker-compose>=1.29.2            # Container orchestration
+
+# ============================================================================
+# UTILITY TOOLS FOR DEVELOPMENT
+# ============================================================================
+
+# File Watching and Auto-restart
+watchfiles>=0.21.0                # Efficient file watching
+entr>=0.5.4                       # Run commands when files change
+
+# Terminal Enhancement
+rich>=13.7.0                      # Rich text and beautiful formatting
+click>=8.1.7                      # Command-line interface creation
+typer>=0.9.0                      # Modern CLI framework based on type hints
+
+# Data Generation and Manipulation
+mimesis>=15.1.0                   # Data generation library
+attrs>=23.2.0                     # Classes without boilerplate
+
+# ============================================================================
+# EXPERIMENTAL AND CUTTING-EDGE TOOLS
+# ============================================================================
+
+# Advanced Type Checking
+pyre-check>=0.9.19                # Facebook's static type checker (alternative to mypy)
+pyright>=1.1.349                  # Microsoft's static type checker
+
+# Code Analysis
+wily>=1.25.0                      # Code complexity tracking
+radon>=6.0.1                      # Code metrics
+xenon>=0.9.1                      # Code complexity monitoring
+
+# ============================================================================
+# SECURITY TESTING
+# ============================================================================
+
+# Security Analysis
+semgrep>=1.55.0                   # Static analysis for security
+pip-audit>=2.6.2                  # Audit Python packages for vulnerabilities
+
+# ============================================================================
+# SPECIALIZED TESTING TOOLS
+# ============================================================================
+
+# Property-based Testing
+hypothesis>=6.96.0                # Property-based testing framework
+
+# Mutation Testing
+mutmut>=2.4.3                     # Mutation testing for Python
+
+# Contract Testing
+pact-python>=2.2.0                # Consumer-driven contract testing
+
+# ============================================================================
+# DEVELOPMENT WORKFLOW TOOLS
+# ============================================================================
+
+# Task Automation
+invoke>=2.2.0                     # Python task automation
+nox>=2023.4.22                    # Automated testing in multiple environments
+
+# Project Templates
+cookiecutter>=2.5.0               # Project templating tool
+
+# ============================================================================
+# LOGGING AND MONITORING IN DEVELOPMENT
+# ============================================================================
+
+# Enhanced Logging
+structlog>=23.2.0                 # Structured logging
+colorlog>=6.8.0                   # Colored logging output
+loguru>=0.7.2                     # Simplified logging

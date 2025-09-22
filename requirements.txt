@@ -1,34 +1,214 @@
-# Core dependencies
-pyttsx3
-keyboard
-vosk
-sounddevice
-soundfile
-pygame
+# NIA Enhanced - Core Requirements
+# This file contains the essential dependencies for NIA Enhanced features
 
-# Testing
-pytest
-pytest-asyncio
+# ============================================================================
+# CORE DEPENDENCIES (Original NIA)
+# ============================================================================
 
-# TTS dependencies (optional: Coqui TTS requires MSVC build tools)
-# Coqui TTS: pip install TTS
-torch
-torchaudio
-numpy
+# Voice and Audio Processing
+pyttsx3>=2.90                     # Text-to-Speech engine
+keyboard>=0.13.5                  # Hotkey detection
+vosk>=0.3.45                      # Offline speech recognition
+sounddevice>=0.4.6                # Audio I/O
+soundfile>=0.12.1                 # Audio file processing
+pygame>=2.5.2                     # Audio playback support
 
-# STT dependencies
-SpeechRecognition
-silero_vad
-# Optional STT enhancements
-deepfilternet  # DeepFilterNet for noise suppression
+# Speech Enhancement
+SpeechRecognition>=3.10.0         # Speech recognition wrapper
+silero_vad>=4.0.0                 # Voice Activity Detection
+deepfilternet>=0.5.6              # Audio noise suppression (optional)
 
-# LangChain dependencies
-langchain
-langchain_core
-langchain_ollama
-lancedb
-farm-haystack
+# Neural Network Framework
+torch>=2.1.0                      # PyTorch for neural models
+torchaudio>=2.1.0                 # Audio processing for PyTorch
+numpy>=1.24.0                     # Numerical computing
+
+# LangChain Integration
+langchain>=0.1.0                  # LLM framework
+langchain-core>=0.1.0             # LangChain core components
+langchain-ollama>=0.1.0           # Ollama integration
+
+# Vector Database
+lancedb>=0.4.0                    # Vector database for embeddings
 
 # Configuration
-PyYAML
+PyYAML>=6.0.1                     # YAML configuration parsing
 
+# ============================================================================
+# MULTI-PROVIDER LLM SUPPORT
+# ============================================================================
+
+# OpenAI Integration
+openai>=1.12.0                    # Official OpenAI Python client
+
+# Anthropic Integration  
+anthropic>=0.18.0                 # Official Anthropic Python client
+
+# Google AI Integration (Optional)
+google-generativeai>=0.4.0        # Google Gemini API
+
+# HTTP Clients for API Integration
+httpx>=0.26.0                     # Modern async HTTP client
+aiohttp>=3.9.0                    # Alternative async HTTP client
+
+# ============================================================================
+# DATABASE INTEGRATION
+# ============================================================================
+
+# ORM and Database Core
+sqlalchemy>=2.0.25                # Python SQL toolkit and ORM
+alembic>=1.13.1                   # Database migration tool
+
+# Database Drivers
+# SQLite (built into Python, but async support needed)
+aiosqlite>=0.19.0                 # Async SQLite driver
+
+# PostgreSQL (Production recommended)
+psycopg2-binary>=2.9.9            # PostgreSQL adapter
+asyncpg>=0.29.0                   # Async PostgreSQL driver
+
+# MySQL (Alternative)
+PyMySQL>=1.1.0                    # Pure Python MySQL client
+aiomysql>=0.2.0                   # Async MySQL driver
+
+# ============================================================================
+# CACHING AND SESSION MANAGEMENT
+# ============================================================================
+
+# Redis Integration
+redis>=5.0.1                      # Redis Python client
+hiredis>=2.3.2                    # High-performance Redis parser
+aioredis>=2.0.1                   # Async Redis client
+
+# In-Memory Caching
+cachetools>=5.3.2                 # Caching utilities
+
+# ============================================================================
+# WEB API AND INTERFACE
+# ============================================================================
+
+# Modern Web Framework
+fastapi>=0.109.0                  # High-performance web framework
+uvicorn[standard]>=0.27.0         # ASGI server with performance extras
+python-multipart>=0.0.6          # Form data parsing
+sse-starlette>=1.8.2              # Server-sent events
+
+# WebSocket Support
+websockets>=12.0                  # WebSocket implementation
+
+# ============================================================================
+# AUTHENTICATION AND SECURITY
+# ============================================================================
+
+# Authentication
+python-jose[cryptography]>=3.3.0  # JSON Web Tokens
+passlib[bcrypt]>=1.7.4            # Password hashing
+cryptography>=42.0.0              # Encryption utilities
+
+# Rate Limiting
+slowapi>=0.1.9                    # Rate limiting for FastAPI
+python-limiter>=3.5.0             # General rate limiting
+
+# ============================================================================
+# SYSTEM MONITORING AND ANALYTICS
+# ============================================================================
+
+# System Resource Monitoring
+psutil>=5.9.8                     # System and process utilities
+
+# Metrics and Monitoring
+prometheus-client>=0.19.0         # Metrics collection for Prometheus
+
+# Structured Logging
+structlog>=23.2.0                 # Structured logging
+
+# ============================================================================
+# DATA PROCESSING AND VALIDATION
+# ============================================================================
+
+# Data Validation and Serialization
+pydantic>=2.5.3                   # Data validation using Python type hints
+email-validator>=2.1.0            # Email validation for Pydantic
+
+# Data Analysis (for analytics)
+pandas>=2.2.0                     # Data manipulation and analysis
+
+# JSON Processing
+orjson>=3.9.12                    # Fast JSON library
+msgpack>=1.0.7                    # Efficient binary serialization
+
+# ============================================================================
+# UTILITIES AND HELPERS
+# ============================================================================
+
+# Environment and Configuration
+python-decouple>=3.8              # Environment variable management
+python-dotenv>=1.0.0              # Load environment variables from .env
+
+# String and URL Processing
+python-slugify>=8.0.1             # Convert strings to URL-friendly slugs
+shortuuid>=1.0.11                 # Generate short UUIDs
+
+# Date and Time
+python-dateutil>=2.8.2            # Powerful extensions to datetime
+pytz>=2024.1                      # Timezone definitions
+
+# Command Line Interface
+click>=8.1.7                      # Command line interface creation kit
+rich>=13.7.0                      # Rich text and beautiful formatting
+
+# File Operations
+aiofiles>=23.2.1                  # Async file operations
+
+# ============================================================================
+# TEXT PROCESSING AND NLP
+# ============================================================================
+
+# Text Statistics and Analysis
+textstat>=0.7.3                   # Calculate statistics from text
+
+# Document Processing
+pypdf>=4.0.0                      # PDF processing
+python-docx>=1.1.0                # Microsoft Word document processing
+markdown>=3.5.2                   # Markdown processing
+
+# ============================================================================
+# DEVELOPMENT AND TESTING
+# ============================================================================
+
+# Testing Framework
+pytest>=8.0.0                     # Testing framework
+pytest-asyncio>=0.23.0            # Async support for pytest
+coverage>=7.4.0                   # Code coverage measurement
+
+# ============================================================================
+# BACKGROUND PROCESSING (OPTIONAL)
+# ============================================================================
+
+# Task Queue (for advanced deployments)
+# celery>=5.3.4                   # Distributed task queue
+# flower>=2.0.1                   # Celery monitoring tool
+
+# ============================================================================
+# CLOUD STORAGE (OPTIONAL)
+# ============================================================================
+
+# AWS Integration
+# boto3>=1.34.34                  # AWS SDK for Python
+
+# Google Cloud Integration  
+# google-cloud-storage>=2.10.0    # Google Cloud Storage client
+
+# Azure Integration
+# azure-storage-blob>=12.19.0     # Azure Blob Storage client
+
+# ============================================================================
+# OBSERVABILITY AND ERROR TRACKING (OPTIONAL)
+# ============================================================================
+
+# Error Tracking
+# sentry-sdk>=1.40.0              # Error tracking and performance monitoring
+
+# Distributed Tracing
+# opentelemetry-api>=1.22.0       # OpenTelemetry API
+# opentelemetry-sdk>=1.22.0       # OpenTelemetry SDK
